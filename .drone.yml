@@ -2,8 +2,13 @@ kind: pipeline
 name: lint
 
 steps:
-- name: lint-docker-compose
+{{ range .Files }}
+{{ if eq .Ext "yml" }}
+- name: lint-docker-compose-${{ trimPrefix .Path "./" }}
   image: docker/compose:1.29.2
   commands:
-    - docker-compose -f docker-compose.yml config --quiet
-    - docker-compose -f docker-compose.yml config
+    - cd $(dirname $0)
+    - docker-compose -f ${{ .Path }} config --quiet
+    - docker-compose -f ${{ .Path }} config
+{{ end }}
+{{ end }}
