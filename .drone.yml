@@ -1,19 +1,9 @@
 kind: pipeline
-type: docker
-name: default
-
-trigger:
-  event:
-    - push
-    - tag
-
-platform:
-  os: linux
-  arch: amd64
+name: lint
 
 steps:
-  - name: update-docker-images
-    image: docker
-    commands:
-      - docker compose pull
-      - docker compose up -d --remove-orphans
+- name: lint-docker-compose
+  image: docker/compose:1.29.2
+  commands:
+    - docker-compose -f docker-compose.yml config --quiet
+    - docker-compose -f docker-compose.yml config
