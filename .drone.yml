@@ -7,4 +7,4 @@ steps:
   - name: lint
     image: hadolint/hadolint
     commands:
-      - hadolint **/docker-compose.yml
+      - hadolint arrs/docker-compose.yml
