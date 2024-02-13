@@ -1,12 +1,8 @@
 kind: pipeline
-name: lint
+name: docker-compose-lint
 
 steps:
-{{#each services}}
-- name: lint-${{ normalize . }}
-  image: docker/compose:1.29.2
+- name: lint
+  image: drone/compose-lint:latest
   commands:
-    - cd ./${{ normalize . }}
-    - docker-compose config --quiet
-    - docker-compose config
-{{/each}}
+  - compose-lint .
