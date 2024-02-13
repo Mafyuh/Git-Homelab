@@ -1,19 +1,10 @@
----
 kind: pipeline
 type: docker
-name: lint-docker-compose
-
-trigger:
-  event:
-    - push
-    - pull_request
-
-platform:
-  os: linux
-  arch: amd64
+name: lint
 
 steps:
-  - name: lint-docker-compose
-    image: docker/compose:1.29.2
+
+  - name: lint
+    image: hadolint/hadolint
     commands:
-      - docker-compose -f docker-compose.yml config
+      - hadolint **/docker-compose.yml
