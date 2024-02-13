@@ -15,5 +15,5 @@ steps:
   - name: update-docker-images
     image: docker
     commands:
-      - docker-compose pull
-      - docker-compose up -d --remove-orphans
+      - docker compose pull
+      - docker compose up -d --remove-orphans
