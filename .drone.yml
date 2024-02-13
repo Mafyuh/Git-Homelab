@@ -2,13 +2,11 @@ kind: pipeline
 name: lint
 
 steps:
-{{ range .Files }}
-{{ if eq .Ext "yml" }}
-- name: lint-docker-compose-${{ trimPrefix .Path "./" }}
+{{#each services}}
+- name: lint-${{ normalize . }}
   image: docker/compose:1.29.2
   commands:
-    - cd $(dirname $0)
-    - docker-compose -f ${{ .Path }} config --quiet
-    - docker-compose -f ${{ .Path }} config
-{{ end }}
-{{ end }}
+    - cd ./${{ normalize . }}
+    - docker-compose config --quiet
+    - docker-compose config
+{{/each}}
