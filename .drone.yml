@@ -1,11 +1,33 @@
 ---
 kind: pipeline
 type: docker
-name: default
+name: Lint on PR
+
+trigger:
+  event:
+    - pull_request
 
 steps:
-  - name: test
-    image: geerlingguy/docker-ubuntu1804-ansible:testing
+  - name: python3.8
+    image: python:3.8-slim-bullseye
     commands:
-      - "find . -maxdepth 1 -name '*.yml' | sort | grep -v '.drone.yml' | xargs ansible-playbook --syntax-check --list-tasks"
-      - "find . -maxdepth 1 -name '*.yml' | sort | grep -v '.drone.yml' | xargs ansible-lint"
+      - "python3 --version"
+      - "pip3 install yamllint"
+      - "yamllint --version"
+      - "yamllint ."
+
+  - name: python3.9
+    image: python:3.9-slim-bullseye
+    commands:
+      - "python3 --version"
+      - "pip3 install yamllint"
+      - "yamllint --version"
+      - "yamllint ."
+
+  - name: python3.10
+    image: python:3.10-slim-bullseye
+    commands:
+      - "python3 --version"
+      - "pip3 install yamllint"
+      - "yamllint --version"
+      - "yamllint ."
