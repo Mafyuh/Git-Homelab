@@ -2,7 +2,7 @@
 version: "3.7"
 services:
   bazarr:
-    image: lscr.io/linuxserver/bazarr:v1.0
+    image: lscr.io/linuxserver/bazarr@sha256:cd254d8f067438561890c8699fa4219f8bf6cc29a132cf3da004dba91e5af3e8
     ports:
       - "6767:6767"
     volumes:
