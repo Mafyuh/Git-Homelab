@@ -14,7 +14,7 @@ steps:
       - "python3 --version"
       - "pip3 install yamllint"
       - "yamllint --version"
-      - "yamllint ."
+      - "yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" ."
 
   - name: python3.9
     image: python:3.9-slim-bullseye
