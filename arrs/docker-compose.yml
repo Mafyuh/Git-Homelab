@@ -39,7 +39,7 @@ services:
       - PGID=1000
 
   radarr:
-    image: lscr.io/linuxserver/radarr@sha256:5854e090d13b7c7d950bf34d8fe840bd2c5633cfd8ce8e9350eed3e7bfd31ad1
+    image: lscr.io/linuxserver/radarr@sha256:16c446007ee5e34283073abf3642ae9ef3da4a2124a21d8459fff2828bc84c35
     ports:
       - "7878:7878"
     volumes:
