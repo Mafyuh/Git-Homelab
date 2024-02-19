@@ -11,8 +11,8 @@ services:
       - /data/media:/data/media
     restart: unless-stopped
     environment:
-      - PUID=0
-      - PGID=0
+      - PUID=1000
+      - PGID=1000
 
   lidarr:
     image: lscr.io/linuxserver/lidarr@sha256:86a64c594123171feaa3f4ccd81f4ab624c5ba63e6a3dbd6ba64dacb3f1cb5e9
