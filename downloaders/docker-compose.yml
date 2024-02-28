@@ -1,0 +1,48 @@
+version: '3.9'
+services:
+  sabnzbd:
+    image: lscr.io/linuxserver/sabnzbd@sha256:8776ac2bb282732a40f3d839275d7391107b50c6bd0aa387e56a3e47d1bfab77
+    container_name: sabnzbd
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /docker/appdata/sabnzbd:/config
+      - /data/usenet:/data/usenet:rw
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+
+  arch-qbittorrentvpn:
+    image: binhex/arch-qbittorrentvpn@sha256:1c0d02fab033d7b84eef15036d60bf6db092a9cf410d9570dfc76e258a4104ab
+    container_name: qbittorrentvpn
+    volumes:
+      - '/docker/appdata/qbitty:/config'
+      - '/data/torrents/:/data/torrents'
+      - '/etc/localtime:/etc/localtime:ro'
+    ports:
+      - '49550:49550'
+      - '49551:8118'
+    environment:
+      - VPN_ENABLED=yes
+      - VPN_PROV=protonvpn
+      - VPN_CLIENT=wireguard
+      - VPN_USER=mafyuh+pmp
+      - VPN_PASS=
+      - STRICT_PORT_FORWARD=yes
+      - LAN_NETWORK=10.0.0.0/24
+      - ENABLE_PRIVOXY=yes
+      - PUID=1000
+      - PGID=1000
+      - WEBUI_PORT=49550
+      - UMASK=1000
+      - DEBUG=false
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    privileged: true
+    network_mode: bridge
+    restart: unless-stopped
