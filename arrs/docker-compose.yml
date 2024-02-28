@@ -2,7 +2,7 @@
 version: "3.7"
 services:
   bazarr:
-    image: lscr.io/linuxserver/bazarr@sha256:f89c2ef6202252a2442061f47e68f33cb3b40902a9d0929659cb7447547e80da
+    image: lscr.io/linuxserver/bazarr@sha256:d9cb62904760a40ade8642e70be8e78bccfc7b4301d5496626004444f4c32fb9
     ports:
       - "6767:6767"
     volumes:
@@ -15,7 +15,7 @@ services:
       - PGID=1000
 
   lidarr:
-    image: lscr.io/linuxserver/lidarr@sha256:86a64c594123171feaa3f4ccd81f4ab624c5ba63e6a3dbd6ba64dacb3f1cb5e9
+    image: lscr.io/linuxserver/lidarr@sha256:e8dd8dcd32a31f66523ce96c4c268974a72fcd196d0be1e26469987e8c739517
     ports:
       - "8686:8686"
     volumes:
