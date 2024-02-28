@@ -15,7 +15,7 @@ services:
       - PGID=1000
 
   lidarr:
-    image: lscr.io/linuxserver/lidarr@sha256:86a64c594123171feaa3f4ccd81f4ab624c5ba63e6a3dbd6ba64dacb3f1cb5e9
+    image: lscr.io/linuxserver/lidarr@sha256:e8dd8dcd32a31f66523ce96c4c268974a72fcd196d0be1e26469987e8c739517
     ports:
       - "8686:8686"
     volumes:
