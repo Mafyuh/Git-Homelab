@@ -8,6 +8,13 @@ trigger:
     - pull_request
 
 steps:
+  - name: lint_docker_compose
+    image: python:3.8-slim-bullseye
+    commands:
+      - "pip3 install yamllint"
+      - "yamllint --version"
+      - 'yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" ./*.yml'
+
   - name: python3.8
     image: python:3.8-slim-bullseye
     commands:
@@ -31,3 +38,28 @@ steps:
       - "pip3 install yamllint"
       - "yamllint --version"
       - 'yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" .'
+
+  # Add conditional steps for specific directories here
+  - name: lint_arrs_directory
+    image: python:3.8-slim-bullseye
+    commands:
+      - "pip3 install yamllint"
+      - "yamllint --version"
+      - 'yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" ./arr/*.yml'
+    when:
+      condition:
+        - change_match:
+            path: 
+              - "^arrs/.*\.yml$"
+
+  - name: lint_downloaders_directory
+    image: python:3.8-slim-bullseye
+    commands:
+      - "pip3 install yamllint"
+      - "yamllint --version"
+      - 'yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" ./downloaders/*.yml'
+    when:
+      condition:
+        - change_match:
+            path: 
+              - "^downloaders/.*\.yml$"
