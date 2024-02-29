@@ -49,7 +49,7 @@ steps:
       condition:
         - change_match:
             path: 
-              - "^arrs/.*\\.yml$"
+              - "arrs/docker-compose.yml"
 
   - name: lint_downloaders_directory
     image: python:3.8-slim-bullseye
@@ -61,7 +61,7 @@ steps:
       condition:
         - change_match:
             path: 
-              - - "^downloaders/.*\\.yml$"
+              - "downloaders/docker-compose.yml"
 ---
 
 kind: pipeline
