@@ -80,7 +80,6 @@ steps:
     settings:
       branch: arrs
       base: main
-      commit: ${DRONE_COMMIT_SHA}
       paths:
         - arrs/*
 
@@ -89,6 +88,5 @@ steps:
     settings:
       branch: downloaders
       base: main
-      commit: ${DRONE_COMMIT_SHA}
       paths:
         - downloaders/*
