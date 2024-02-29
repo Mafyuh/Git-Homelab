@@ -56,7 +56,7 @@ steps:
   - name: Find folders to update
     script: |
       folders=$(find . -type d -name 'docker-compose.yml' | sed 's/\/docker-compose\.yml//g' | uniq)
-      echo "Found folders: $folders"
+      echo "Found folders: $folders"  
 
   # Loop through each folder and update its branch
   - name: Update branches
@@ -68,9 +68,9 @@ steps:
           - git checkout {{ $folder }}
           - git rebase origin/main
           - git push origin {{ $folder }}
-      {{ end }}
+      {{ end }}  
 
 # This condition ensures the pipeline runs only if there are changes to any folder
 when:
   - expression: |
-    git diff --name-only origin/main HEAD | grep -E '\.(yml|yaml)'
+    git diff --name-only origin/main HEAD | grep -E '\.(yml|yaml)' 
