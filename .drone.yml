@@ -1,4 +1,3 @@
----
 kind: pipeline
 type: docker
 name: Lint on PR
@@ -14,7 +13,8 @@ steps:
       - "python3 --version"
       - "pip3 install yamllint"
       - "yamllint --version"
-      - 'yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" .'
+      - 'find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +'
+      - 'find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +'
 
   - name: python3.9
     image: python:3.9-slim-bullseye
@@ -22,7 +22,8 @@ steps:
       - "python3 --version"
       - "pip3 install yamllint"
       - "yamllint --version"
-      - 'yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" .'
+      - 'find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +'
+      - 'find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +'
 
   - name: python3.10
     image: python:3.10-slim-bullseye
@@ -30,4 +31,5 @@ steps:
       - "python3 --version"
       - "pip3 install yamllint"
       - "yamllint --version"
-      - 'yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" .'
+      - 'find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +'
+      - 'find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +'
