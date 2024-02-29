@@ -63,3 +63,35 @@ steps:
         - change_match:
             path: 
               - "^downloaders/.*\.yml$"
+
+---
+
+
+kind: pipeline
+type: docker
+name: Update Branches
+
+trigger:
+  event:
+    - push
+  branch:
+    - main
+
+steps:
+  - name: Update arrs branch
+    image: plugins/git
+    settings:
+      branch: arrs
+      base: main
+      commit: ${DRONE_COMMIT_SHA}
+      paths:
+        - arrs/*
+
+  - name: Update downloaders branch
+    image: plugins/git
+    settings:
+      branch: downloaders
+      base: main
+      commit: ${DRONE_COMMIT_SHA}
+      paths:
+        - downloaders/*
