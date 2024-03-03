@@ -1,0 +1,21 @@
+---
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    devices:
+      - /dev/dri/renderD129:/dev/dri/renderD129
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - DOCKER_MODS=linuxserver/mods:jellyfin-opencl-intel
+    volumes:
+      - /home/mafyuh/jellyfin/config:/config
+      - /mnt/thePoolShare/Media:/Media
+      - /home/mafyuh/jellyfin/transcodes:/transcodes
+      - /home/mafyuh/jellyfin/cache:/nvmecache
+      - /home/mafyuh/jellyfin/metadata:/nvmemetadata
+    ports:
+      - 8096:8096
+    restart: unless-stopped
