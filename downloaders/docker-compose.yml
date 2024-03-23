@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   sabnzbd:
-    image: lscr.io/linuxserver/sabnzbd@sha256:8061b94be144f366a9a57d6b1bf147cd418a990ed5539bae2681711412d53012
+    image: lscr.io/linuxserver/sabnzbd@sha256:97c62609cd6a91cd8de025dfe51594b0f3de41b7f4a5d0e3dc094027346072ea
     container_name: sabnzbd
     environment:
       - PUID=1000
