@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
 
   arch-qbittorrentvpn:
-    image: binhex/arch-qbittorrentvpn@sha256:ef28b69de0c3172807c324f32757b0c479cb4b88b6845f0558a7b602f0aee3c4
+    image: binhex/arch-qbittorrentvpn@sha256:7b2e706abf1bb9df8cb900daf9903634c69ef6ae40b9c939f0f5a178a00ba6cc
     container_name: qbittorrentvpn
     volumes:
       - '/docker/appdata/qbitty:/config'
