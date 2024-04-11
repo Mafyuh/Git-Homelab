@@ -7,12 +7,12 @@
   "dependencyDashboardTitle": "Renovate Dashboard",
   "labels": ["renovatebot"],
   "docker-compose": {
-    "ignorePaths": ["apps_old"]
+    "ignorePaths": ["scripts"]
   },
   "hostRules": [
     {
       "matchHost": "docker.io",
-      "concurrentRequestLimit": 2
+      "concurrentRequestLimit": 3
     }
   ]
 }
