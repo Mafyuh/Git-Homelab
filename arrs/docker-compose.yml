@@ -15,7 +15,7 @@ services:
       - PGID=1000
 
   lidarr:
-    image: lscr.io/linuxserver/lidarr@sha256:800cf2d9d10113e371af975f3dfeed97f196e8747a463c6e4639d2bd300cdf10
+    image: lscr.io/linuxserver/lidarr@sha256:e1abb0af888c67ceb2607ed0e72244a2db5e8c69a81ba79c115dc1b3e78f257b
     ports:
       - "8686:8686"
     volumes:
@@ -28,7 +28,7 @@ services:
       - PGID=1000
 
   prowlarr:
-    image: lscr.io/linuxserver/prowlarr@sha256:575327a71a9f00284246623a237d5079f3dc53db05805373938dd7534987bf26
+    image: lscr.io/linuxserver/prowlarr@sha256:2286e6381b62fa4fec296bd101e51355e48193c99cdc813ae7dc50ee4696ef9a
     ports:
       - "9696:9696"
     volumes:
@@ -63,6 +63,18 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr@sha256:caf77d79272d16e8081a90e0f2b2928d385ca0b3c0dd36e50cb46ff3aa940ab9
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /docker/appdata/homarr/configs:/app/data/configs
+      - /docker/appdata/homarr/icons:/app/public/icons
+      - /docker/appdata/homarr/data:/data
+    ports:
+      - '7575:7575'
 
 networks:
   default:
