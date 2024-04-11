@@ -8,7 +8,7 @@ Example:
 ```
 Crontab:
 ```
-*/30 * * * * /home/mafyuh/dccd.sh -b main -d /home/mafyuh/Auto-Homelab -l /tmp/dccd.txt -p -f 'arrs'
+*/30 * * * * /home/mafyuh/Auto-Homelab/scripts/dccd.sh -b main -d /home/mafyuh/Auto-Homelab -l /tmp/dccd.txt -p -f 'arrs'
 ```
 View Logs:
 ```
