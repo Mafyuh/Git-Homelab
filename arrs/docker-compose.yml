@@ -64,6 +64,18 @@ services:
       - PUID=1000
       - PGID=1000
 
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr@sha256:caf77d79272d16e8081a90e0f2b2928d385ca0b3c0dd36e50cb46ff3aa940ab9
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /docker/appdata/homarr/configs:/app/data/configs
+      - /docker/appdata/homarr/icons:/app/public/icons
+      - /docker/appdata/homarr/data:/data
+    ports:
+      - '7575:7575'
+
 networks:
   default:
     name: arrs_default
