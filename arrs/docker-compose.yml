@@ -75,6 +75,31 @@ services:
     ports:
       - '7575:7575'
 
+  doplarr:
+    image: lscr.io/linuxserver/doplarr@sha256:839999416f9f660cc638e72de41b1d854dda43b22d499efdf298d0ece863bc35
+    container_name: doplarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - DISCORD__TOKEN=${DISCORD__TOKEN}
+      - RADARR__API=${RADARR__API}
+      - RADARR__URL=${RADARR__URL}
+      - SONARR__API=${SONARR__API}
+      - SONARR__URL=${SONARR__URL}
+      - DISCORD__MAX_RESULTS=${DISCORD__MAX_RESULTS}
+      - DISCORD__REQUESTED_MSG_STYLE=${DISCORD__REQUESTED_MSG_STYLE}
+      - SONARR__QUALITY_PROFILE=${SONARR__QUALITY_PROFILE}
+      - RADARR__QUALITY_PROFILE=${RADARR__QUALITY_PROFILE}
+      - SONARR__ROOTFOLDER=${SONARR__ROOTFOLDER}
+      - RADARR__ROOTFOLDER=${RADARR__ROOTFOLDER}
+      - PARTIAL_SEASONS=${PARTIAL_SEASONS}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - JAVA_OPTS=${JAVA_OPTS}
+    volumes:
+      - /docker/appdata/doplarr/config:/config
+    restart: unless-stopped
+
 networks:
   default:
     name: arrs_default
