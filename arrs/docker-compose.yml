@@ -1,5 +1,4 @@
 ---
-version: "3.7"
 services:
   bazarr:
     image: lscr.io/linuxserver/bazarr@sha256:563a496ca85130962001b1a40bca1d8f8b37fc646d8d4da771c31d8dd20320d2
