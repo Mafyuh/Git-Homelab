@@ -14,3 +14,8 @@ View Logs:
 ```
 cat /tmp/dccd.txt
 ```
+Export Variables:
+```
+export GOTIFY_BASE_URL="https:go.example.com"
+export GOTIFY_TOKEN="token"
+```

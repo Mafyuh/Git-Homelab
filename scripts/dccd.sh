@@ -7,6 +7,8 @@ BASE_DIR=""                     # Initialize empty variable
 LOG_FILE="/tmp/dccd.log"        # Default log file name
 PRUNE=0                         # Default prune setting
 REMOTE_BRANCH="main"            # Default remote branch name
+NOTIFY_URL="$GOTIFY_BASE_URL/message"  # Gotify server URL
+NOTIFY_TOKEN="$GOTIFY_TOKEN"  # Gotify app token
 
 ########################################
 # Functions
@@ -16,15 +18,23 @@ log_message() {
     echo "$(date +'%Y-%m-%d %H:%M:%S') - $message" | tee -a "$LOG_FILE"
 }
 
+send_notification() {
+    local title="$1"
+    local message="$2"
+
+    curl -X POST "$NOTIFY_URL?token=$NOTIFY_TOKEN" -F "title=$title" -F "message=$message"
+}
+
 update_compose_files() {
     local dir="$1"
     local folder_pattern="$2"  # Added parameter for folder pattern
 
-    cd "$dir" || { log_message "ERROR: Directory doesn't exist, exiting..."; exit 127; }
+    cd "$dir" || { log_message "ERROR: Directory doesn't exist, exiting..."; send_notification "Script Error" "Failed to update compose files: Directory doesn't exist"; exit 127; }
 
     # Make sure we're in a git repo
     if [ ! -d .git ]; then
         log_message "ERROR: Directory is not a git repository, exiting..."
+        send_notification "Script Error" "Failed to update compose files: Directory is not a git repository"
         exit 1
     else
         log_message "INFO:  Git repository found!"
@@ -33,6 +43,7 @@ update_compose_files() {
     # Check if there are any changes in the Git repository
     if ! git fetch origin; then
         log_message "ERROR: Unable to fetch changes from the remote repository (the server may be offline or unreachable)"
+        send_notification "Script Error" "Failed to update compose files: Unable to fetch changes from the remote repository (the server may be offline or unreachable)"
         exit 1
     fi
 
@@ -45,6 +56,7 @@ update_compose_files() {
     uncommitted_changes=$(git status --porcelain)
     if [ -n "$uncommitted_changes" ]; then
         log_message "ERROR: Uncommitted changes detected in $dir, exiting..."
+        send_notification "Script Error" "Failed to update compose files: Uncommitted changes detected in $dir"
         exit 1
     fi
 
@@ -55,6 +67,7 @@ update_compose_files() {
         # Pull any changes in the Git repository
         if ! git pull --quiet origin "$REMOTE_BRANCH"; then
             log_message "ERROR: Unable to pull changes from the remote repository (the server may be offline or unreachable)"
+            send_notification "Script Error" "Failed to update compose files: Unable to pull changes from the remote repository (the server may be offline or unreachable)"
             exit 1
         fi
 
@@ -69,14 +82,14 @@ update_compose_files() {
             fi
             
             # Go into the directory
-            cd "$folder" || { log_message "ERROR: Failed to enter directory $folder"; continue; }
+            cd "$folder" || { log_message "ERROR: Failed to enter directory $folder"; send_notification "Script Error" "Failed to update compose files: Failed to enter directory $folder"; continue; }
             
             # Redeploy compose file in this directory
             log_message "STATE: Redeploying compose file in directory: $folder"
             docker compose up -d --quiet-pull
             
             # Go back to the original directory
-            cd "$dir" || { log_message "ERROR: Failed to return to directory $dir"; exit 1; }
+            cd "$dir" || { log_message "ERROR: Failed to return to directory $dir"; send_notification "Script Error" "Failed to update compose files: Failed to return to directory $dir"; exit 1; }
         done
     else
         log_message "STATE: Hashes match, so nothing to do"
@@ -104,7 +117,7 @@ usage() {
       -x <path>       Exclude directories matching the specified pattern (relative to the base directory)
       -f <pattern>    Specify the pattern for folder names to match
 
-    Example: /path/to/dccd.sh -b master -d /path/to/git_repo -l /tmp/dccd.txt -p -f 'arrs'
+    Example: $0 -b master -d /path/to/git_repo -l /tmp/dccd.txt -p -f 'arrs'
 
 "
     exit 1
@@ -162,6 +175,7 @@ touch "$LOG_FILE"
 # Check if BASE_DIR is provided
 if [ -z "$BASE_DIR" ]; then
     log_message "ERROR: The base directory (-d) is required, exiting..."
+    send_notification "Script Error" "Failed to update compose files: Base directory (-d) is required"
     usage
 else 
     log_message "INFO:  Base directory is set to $BASE_DIR"
@@ -182,6 +196,7 @@ fi
 # Check if FOLDER_PATTERN is provided
 if [ -z "$FOLDER_PATTERN" ]; then
     log_message "ERROR: The folder pattern (-f) is required, exiting..."
+    send_notification "Script Error" "Failed to update compose files: Folder pattern (-f) is required"
     usage
 else
     log_message "INFO:  Folder pattern is set to $FOLDER_PATTERN"
