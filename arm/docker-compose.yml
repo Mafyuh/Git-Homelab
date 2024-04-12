@@ -1,0 +1,78 @@
+---
+services:
+  gotify:
+    image: gotify/server-arm7@sha256:b1fff7e7940fbf0526c2cff20df7a0f41d4618ea373fa9f812fb335c3ddb0b98
+    container_name: gotify
+    ports:
+      - 9008:80
+    volumes:
+      - /docker/appdata/gotify:/app/data
+    restart: unless-stopped
+    environment:
+      - TZ=America/New_York
+      - GOTIFY_DEFAULTUSER_NAME=$GOTIFY_DEFAULTUSER_NAME
+      - GOTIFY_DEFAULTUSER_PASS=$GOTIFY_DEFAULTUSER_PASS
+    networks:
+      - gitea_main
+
+  nginx-proxy-manager:
+    image: jc21/nginx-proxy-manager@sha256:360f871f37bd0e945a358bd5ff8dd3a8d2309623e8bae4c09761d5ab7090404c
+    container_name: nginx-proxy-manager
+    ports:
+      - 80:80
+      - 81:81
+      - 443:443
+    volumes:
+      - /docker/appdata/nginx/data:/data
+      - /docker/appdata/nginx/letsencrypt:/etc/letsencrypt
+    restart: unless-stopped
+    networks:
+      - gitea_main
+
+  uptime-kuma:
+    image: louislam/uptime-kuma@sha256:48c17e48b96c17ee09f613c8c115dc05bc0bdc52cdf1ede6f634ba3798a7171e
+    container_name: uptime-kuma
+    ports:
+      - 3001:3001
+    volumes:
+      - /docker/appdata/kuma:/app/data
+    restart: unless-stopped
+    networks:
+      - gitea_main
+
+  jellyseerr:
+    image: fallenbagel/jellyseerr@sha256:ac4e42e1be629419dbbe423ed41a179cb33140c7ced7f4679eb4b058e84b5aca
+    container_name: jellyseerr
+    ports:
+      - 5055:5055
+    volumes:
+      - /docker/appdata/jellyseerr:/app/config
+    environment:
+      - TZ=America/New_York
+      - LOG_LEVEL=debug
+    restart: unless-stopped
+    networks:
+      - gitea_main
+
+  linkstack:
+    image: linkstackorg/linkstack@sha256:ad2ec7ffa69f4b04367313d1b95566bb00955b9670eb5467fd4fab39dd1f53c1
+    container_name: linkstack
+    ports:
+      - 8005:80
+      - 8006:443
+    volumes:
+      - linkstack:/htdocs
+    environment:
+      - HTTP_SERVER_NAME=$HTTP_SERVER_NAME
+      - HTTPS_SERVER_NAME=$HTTP_SERVER_NAME
+      - SERVER_ADMIN=$SERVER_ADMIN
+    restart: unless-stopped
+    networks:
+      - gitea_main
+
+networks:
+  gitea_main:
+    external: true
+
+volumes:
+  linkstack:
