@@ -74,13 +74,22 @@ services:
       - /docker/appdata/homarr/data:/data
     ports:
       - '7575:7575'
+    environment:
+      - AUTH_PROVIDER=oidc
+      - AUTH_OIDC_URI=${AUTH_OIDC_URI}
+      - AUTH_OIDC_CLIENT_SECRET=${AUTH_OIDC_CLIENT_SECRET}
+      - AUTH_OIDC_CLIENT_ID=${AUTH_OIDC_CLIENT_ID}
+      - AUTH_OIDC_CLIENT_NAME=authentik
+      - BASE_URL=${BASE_URL}
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - AUTH_OIDC_ADMIN_GROUP=${AUTH_OIDC_ADMIN_GROUP}
 
   doplarr:
     image: lscr.io/linuxserver/doplarr@sha256:839999416f9f660cc638e72de41b1d854dda43b22d499efdf298d0ece863bc35
     container_name: doplarr
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
+      - PUID=1000
+      - PGID=1000
       - TZ=${TZ}
       - DISCORD__TOKEN=${DISCORD__TOKEN}
       - RADARR__API=${RADARR__API}
