@@ -51,7 +51,7 @@ services:
       - PGID=1000
 
   sonarr:
-    image: lscr.io/linuxserver/sonarr@sha256:f4c3088f5c07a33da5bd3d39df7499c425c60f3e40093a2efd057d145a73b34f
+    image: lscr.io/linuxserver/sonarr@sha256:b320e411a6781a39042eee68a22a535f578033ce44e937caed10489a16336f5f
     ports:
       - "8989:8989"
     volumes:
