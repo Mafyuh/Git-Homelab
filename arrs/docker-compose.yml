@@ -109,6 +109,15 @@ services:
       - /docker/appdata/doplarr/config:/config
     restart: unless-stopped
 
+  jfa-go:
+    image: hrfee/jfa-go
+    container_name: jfa-go
+    ports:
+      - 8056:8056
+    volumes:
+      - /docker/appdata/jfa-go/config:/data
+      - /etc/localtime:/etc/localtime:ro
+
 networks:
   default:
     name: arrs_default
