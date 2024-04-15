@@ -19,3 +19,16 @@ services:
     ports:
       - 8096:8096
     restart: unless-stopped
+
+  makemkv:
+    image: jlesage/makemkv
+    container_name: makemkv
+    ports:
+      - 5800:5800
+    volumes:
+      - /docker/appdata/makemkv:/config:rw
+      - /home/mafyuh/makemkv/storage:/storage:rw
+      - /mnt/thePoolShare/Media/BR:/output:rw
+    devices:
+      - /dev/sr0:/dev/sr0
+    privileged: true
