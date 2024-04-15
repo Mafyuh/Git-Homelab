@@ -21,7 +21,7 @@ services:
     restart: unless-stopped
 
   makemkv:
-    image: jlesage/makemkv
+    image: jlesage/makemkv@sha256:7e7e6a00431d0247dd61ed714b7ea51a3d36db6837c7bbc5c0f6cac119a1548b
     container_name: makemkv
     ports:
       - 5800:5800
