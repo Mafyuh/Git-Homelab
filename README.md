@@ -1,5 +1,5 @@
 # Auto-Homelab
-Homelab docker compose environment in code. Using Drone and Renovate bot for CI along with bash scripts for CD.
+Homelab environment defined in code. Using Drone and Renovate bot for CI along with bash scripts for CD. Very much still a WIP.
 
 ## Apps in Repo:
 <table>
@@ -108,6 +108,11 @@ Homelab docker compose environment in code. Using Drone and Renovate bot for CI 
         <td><a href="https://github.com/hrfee/jfa-go">jfa-go</a></td>
         <td>Used for some PPV/Live TV automations to create users for certain periods of time</td>
     </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_60,h_60/https://dashboard.snapcraft.io/site_media/appmedia/2020/03/makemkv.png"></td>
+        <td><a href="https://github.com/jlesage/docker-makemkv">MakeMKV</a></td>
+        <td>Used to rip Bluray's with my LG BU40N drive </td>
+    </tr>
 </table>
 
 ## Apps not yet in repo:
@@ -138,14 +143,49 @@ Homelab docker compose environment in code. Using Drone and Renovate bot for CI 
         <td>Web-based management for Docker containers</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/docker.svg"></td>
-        <td><a href="https://github.com/jlesage/docker-makemkv">MakeMKV</a></td>
-        <td>Used to rip Bluray's with my LG BU40N drive </td>
-    </tr>
-    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/wordpress.svg"></td>
         <td><a href="https://wordpress.org/">Wordpress</a></td>
         <td>WooCommerce store setup for JF PPV access</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/droneci.svg"></td>
+        <td><a href="https://www.drone.io/">Drone</a></td>
+        <td>Selfhosted CI/CD pipeline manager</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/forgejo.svg"></td>
+        <td><a href="https://forgejo.org/">Forgejo</a></td>
+        <td>This site</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/cloudflare.svg"></td>
+        <td><a href="https://www.cloudflare.com/products/tunnel/">Cloudflare Tunnels</a></td>
+        <td>How I expose some of these services</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apache_Guacamole_logo.png"></td>
+        <td><a href="https://guacamole.apache.org/">Guacamole</a></td>
+        <td>Remote access in browser via SSH, RDP, VNC, etc</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://play-lh.googleusercontent.com/GBhNhKgjfy6i6Ucc0hyB-79WmcV7LvKSfGSy8iStFdZSaLioKQp5rPWjqsh2YFRRZsE1"></td>
+        <td><a href="https://twingate.com">Twingate Connectors</a></td>
+        <td>Main VPN between homelab and cloud VPS's</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/homeassistant.svg"></td>
+        <td><a href="https://www.home-assistant.io/">Home Assistant</a></td>
+        <td>Slowly migrating over to Home Assistant from Google Home</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/adguardhome.svg"></td>
+        <td><a href="https://adguard.com/en/adguard-home/overview.html">AdGuard Home</a></td>
+        <td>Network Wide DNS adblock as well as my DNS server</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/plausible.svg"></td>
+        <td><a href="https://plausible.io/">Plausible</a></td>
+        <td>Analytics tracker for certain websites (Blog)</td>
     </tr>
 </table>
 
@@ -161,3 +201,6 @@ Homelab docker compose environment in code. Using Drone and Renovate bot for CI 
 [![Forgejo](https://img.shields.io/badge/-Forgejo-%23c9d1d9?logo=forgejo&logoColor=orange)](https://forgejo.org/)
 [![Drone](https://img.shields.io/badge/-Drone-%23c9d1d9?logo=drone&logoColor=black)](https://www.drone.io/)
 [![Docker](https://img.shields.io/badge/-Docker-%23c9d1d9?logo=docker)](https://www.docker.com/)
+
+### VPS (arm)
+[![Oracle](https://img.shields.io/badge/-Oracle_Cloud-%23c9d1d9?logo=oracle&logoColor=red)](https://www.oracle.com/cloud/)
