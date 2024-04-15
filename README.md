@@ -113,6 +113,11 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
         <td><a href="https://github.com/jlesage/docker-makemkv">MakeMKV</a></td>
         <td>Used to rip Bluray's with my LG BU40N drive </td>
     </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/cloudflare.svg"></td>
+        <td><a href="https://www.cloudflare.com/products/tunnel/">Cloudflare Tunnels</a></td>
+        <td>How I expose some of these services</td>
+    </tr>
 </table>
 
 ## Apps not yet in repo:
@@ -156,11 +161,6 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/forgejo.svg"></td>
         <td><a href="https://forgejo.org/">Forgejo</a></td>
         <td>This site</td>
-    </tr>
-    <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/cloudflare.svg"></td>
-        <td><a href="https://www.cloudflare.com/products/tunnel/">Cloudflare Tunnels</a></td>
-        <td>How I expose some of these services</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apache_Guacamole_logo.png"></td>

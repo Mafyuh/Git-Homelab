@@ -1,9 +1,13 @@
 Modified version of https://github.com/loganmarchione/dccd, with Gotify notification on error and allowing to choose which directory is cd'd into before running script. I run this on each docker host through crontab every 30 minutes, just adding the -f flag with the folder which that host represents.
 
+Clone this repo:
+```
+git clone https://git.mafyuh.dev/mafyuh/Auto-Homelab.git
+```
 
 Make executable:
 ```
-sudo chmod +x dccd.sh
+sudo chmod +x /home/mafyuh/Auto-Homelab/scripts/dccd.sh
 ```
 Example:
 ```
