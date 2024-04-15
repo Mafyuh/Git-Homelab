@@ -41,7 +41,7 @@ services:
       - gitea_main
 
   jellyseerr:
-    image: fallenbagel/jellyseerr@sha256:ac4e42e1be629419dbbe423ed41a179cb33140c7ced7f4679eb4b058e84b5aca
+    image: fallenbagel/jellyseerr@sha256:b026ae2a24ecb214412352d594607252b49babb776ac0b2b522e0b5a6f33272b
     container_name: jellyseerr
     ports:
       - 5055:5055
