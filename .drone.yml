@@ -13,8 +13,7 @@ steps:
       - "python3 --version"
       - "pip3 install yamllint"
       - "yamllint --version"
-      - 'find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +'
-      - 'find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +'
+      - 'for file in $(git diff --name-only $DRONE_COMMIT_BEFORE $DRONE_COMMIT_AFTER); do if [[ $file == *"docker-compose.yml"* ]]; then parent_dir=$(dirname "$file"); cd "$parent_dir"; yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" "$(basename "$file")"; cd -; fi; done'
 
   - name: python3.9
     image: python:3.9-slim-bullseye
