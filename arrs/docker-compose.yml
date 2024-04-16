@@ -30,6 +30,7 @@ services:
 
   prowlarr:
     image: lscr.io/linuxserver/prowlarr@sha256:2286e6381b62fa4fec296bd101e51355e48193c99cdc813ae7dc50ee4696ef9a
+    container_name: prowlarr
     ports:
       - "9696:9696"
     volumes:
@@ -41,6 +42,7 @@ services:
 
   radarr:
     image: lscr.io/linuxserver/radarr@sha256:8af91c486f9edbc460f123857fedd4cfa3215dc0e195390928609c9cc239971b
+    container_name: radarr
     ports:
       - "7878:7878"
     volumes:
@@ -54,6 +56,7 @@ services:
 
   sonarr:
     image: lscr.io/linuxserver/sonarr@sha256:f3aff1cef5d09918a201c5905fdb52bd147b622846713c1db430e48375cec5b5
+    container_name: sonarr
     ports:
       - "8989:8989"
     volumes:
