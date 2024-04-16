@@ -2,6 +2,7 @@
 services:
   bazarr:
     image: lscr.io/linuxserver/bazarr@sha256:563a496ca85130962001b1a40bca1d8f8b37fc646d8d4da771c31d8dd20320d2
+    container_name: bazarr
     ports:
       - "6767:6767"
     volumes:
@@ -15,6 +16,7 @@ services:
 
   lidarr:
     image: lscr.io/linuxserver/lidarr@sha256:3e7d09a80c15aa7d98d3c0d175a6799dc8d69d04a2665994e4aadddaef3d4b66
+    container_name: lidarr
     ports:
       - "8686:8686"
     volumes:
