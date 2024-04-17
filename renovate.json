@@ -14,5 +14,10 @@
       "matchHost": "docker.io",
       "concurrentRequestLimit": 3
     }
+  ],
+  "packageRules": [
+    {
+      "fetchChangeLogs": "pr"
+    }
   ]
 }
