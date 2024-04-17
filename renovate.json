@@ -12,11 +12,7 @@
   "hostRules": [
     {
       "matchHost": "docker.io",
-      "concurrentRequestLimit": 3
-    }
-  ],
-  "packageRules": [
-    {
+      "concurrentRequestLimit": 3,
       "fetchChangeLogs": "pr"
     }
   ]
