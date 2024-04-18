@@ -118,15 +118,6 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
         <td><a href="https://www.cloudflare.com/products/tunnel/">Cloudflare Tunnels</a></td>
         <td>How I expose some of these services</td>
     </tr>
-</table>
-
-## Apps not yet in repo:
-<table>
-    <tr>
-        <th>Logo</th>
-        <th>Name</th>
-        <th>Description</th>
-    </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/authentik.svg"></td>
         <td><a href="https://goauthentik.io/">authentik</a></td>
@@ -136,6 +127,15 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
         <td><img vertical-align=baseline width="32" src="https://avatars.githubusercontent.com/u/99494700?s=200&v=4"></td>
         <td><a href="https://github.com/activepieces/activepieces">ActivePieces</a></td>
         <td>Selfhosted Zapier/n8n alternative </td>
+    </tr>
+</table>
+
+## Apps not yet in repo:
+<table>
+    <tr>
+        <th>Logo</th>
+        <th>Name</th>
+        <th>Description</th>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/grafana.svg"></td>
