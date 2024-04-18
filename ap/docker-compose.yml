@@ -1,7 +1,7 @@
 version: '3.0'
 services:
   activepieces:
-    image: activepieces/activepieces@sha256:00306dff7ecbb88a29bc6da39b5d880c21b572b63c4590dd1859d015a7a6c869
+    image: activepieces/activepieces@sha256:21c453ec4ccde539f72fcd4b2df6c9c12ae1e1066f88ee03f19923ac31aa7a5f
     container_name: activepieces
     restart: unless-stopped
     ## Enable the following line if you already use AP_EXECUTION_MODE with SANDBOXED or old activepieces, checking the breaking change documentation for more info.
