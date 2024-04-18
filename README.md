@@ -128,6 +128,16 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
         <td><a href="https://github.com/activepieces/activepieces">ActivePieces</a></td>
         <td>Selfhosted Zapier/n8n alternative </td>
     </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://www.gravatar.com/avatar/614e0f6491dbb293e540190b02b3024e?s=120&r=g&d=404"></td>
+        <td><a href="https://hub.docker.com/r/sonatype/nexus3/">Sonatype Nexus</a></td>
+        <td>Self-hosted Docker registry to help lower Docker pulls</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://avatars.githubusercontent.com/u/31035808?s=200&v=4"></td>
+        <td><a href="https://docs.mindsdb.com/what-is-mindsdb">mindsdb</a></td>
+        <td>Connects Ollama models to 100+ different databases, easy to use.</td>
+    </tr>
 </table>
 
 ## Apps not yet in repo:
