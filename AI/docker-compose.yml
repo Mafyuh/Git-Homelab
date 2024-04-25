@@ -18,7 +18,7 @@ services:
               capabilities: [gpu]
 
   open-webui:
-    image: ghcr.io/open-webui/open-webui@sha256:8473e8b6f79a40adf434ecf0fa911bf2b052267646cdde7cae727685efc2de4e
+    image: ghcr.io/open-webui/open-webui@sha256:e6c78b70dd6d63c8919a060223d788a3af5e795fc94b30f042ad79ae9f0e6dfc
     container_name: open-webui
     restart: unless-stopped
     ports:
