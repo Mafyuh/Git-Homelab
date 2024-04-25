@@ -30,7 +30,7 @@ services:
       - gitea_main
 
   uptime-kuma:
-    image: louislam/uptime-kuma@sha256:327bea5fa82d34ffb350a73129d372362bc2b5331fee2f3317939cd98634a498
+    image: louislam/uptime-kuma@sha256:11842289eb1dce987753d0583c697582162ee5839a3f8f7d1998b48cba0957d5
     container_name: uptime-kuma
     ports:
       - 3001:3001
