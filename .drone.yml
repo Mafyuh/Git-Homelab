@@ -8,7 +8,7 @@ trigger:
 
 steps:
   - name: python3.8
-    image: python:3.8-slim-bullseye
+    image: docker.mafyuh.xyz/python:3.8-slim-bullseye
     commands:
       - "python3 --version"
       - "pip3 install yamllint"
@@ -17,7 +17,7 @@ steps:
       - 'find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +'
 
   - name: python3.10
-    image: python:3.9-slim-bullseye
+    image: docker.mafyuh.xyz/python:3.9-slim-bullseye
     commands:
       - "python3 --version"
       - "pip3 install yamllint"
@@ -26,7 +26,7 @@ steps:
       - 'find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +'
 
   - name: python3.12
-    image: python:3.10-slim-bullseye
+    image: docker.mafyuh.xyz/python:3.10-slim-bullseye
     commands:
       - "python3 --version"
       - "pip3 install yamllint"
