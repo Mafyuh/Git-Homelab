@@ -33,10 +33,6 @@
       "customChangelogUrl": "https://github.com/ollama/ollama/releases"
     },
     {
-      "matchPackageNames": ["docker.mafyuh.xyz/renovate/renovate"],
-      "customChangelogUrl": "https://github.com/renovatebot/renovate/releases"
-    },
-    {
       "matchPackageNames": ["fallenbagel/jellyseerr"],
       "customChangelogUrl": "https://github.com/Fallenbagel/jellyseerr/releases"
     }
