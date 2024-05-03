@@ -35,6 +35,10 @@
     {
       "matchPackageNames": ["fallenbagel/jellyseerr"],
       "customChangelogUrl": "https://github.com/Fallenbagel/jellyseerr/releases"
+    },
+    {
+      "matchPackageNames": ["binhex/arch-qbittorrentvpn"],
+      "customChangelogUrl": "https://github.com/binhex/arch-qbittorrentvpn/releases/"
     }
   ]
 }
