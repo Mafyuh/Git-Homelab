@@ -19,6 +19,26 @@
     {
       "updateTypes": ["digest"],
       "fetchChangeLogs": "pr"
+    },
+    {
+      "matchPackageNames": ["nginx-proxy-manager"],
+      "customChangelogUrl": "https://github.com/NginxProxyManager/nginx-proxy-manager/releases"
+    },
+    {
+      "matchPackageNames": ["ghcr.io/open-webui/open-webui"],
+      "customChangelogUrl": "https://github.com/open-webui/open-webui/releases"
+    },
+    {
+      "matchPackageNames": ["ollama/ollama"],
+      "customChangelogUrl": "https://github.com/ollama/ollama/releases"
+    },
+    {
+      "matchPackageNames": ["docker.mafyuh.xyz/renovate/renovate"],
+      "customChangelogUrl": "https://github.com/renovatebot/renovate/releases"
+    },
+    {
+      "matchPackageNames": ["fallenbagel/jellyseerr"],
+      "customChangelogUrl": "https://github.com/Fallenbagel/jellyseerr/releases"
     }
   ]
 }
