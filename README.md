@@ -104,6 +104,11 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
         <td>Creates a ChatGPT like web interface for talking to Ollama models</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/portainer.svg"></td>
+        <td><a href="https://github.com/portainer/portainer">Portainer</a></td>
+        <td>Web-based management for Docker containers</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/prowlarr.svg"></td>
         <td><a href="https://prowlarr.com/">Prowlarr</a></td>
         <td>Searches indexers for Radarr/Sonarr</td>
@@ -151,11 +156,6 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/grafana.svg"></td>
         <td><a href="https://hub.docker.com/r/grafana/grafana-oss">Grafana</a></td>
         <td>Monitoring for various services</td>
-    </tr>
-    <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/portainer.svg"></td>
-        <td><a href="https://github.com/portainer/portainer">Portainer</a></td>
-        <td>Web-based management for Docker containers</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/wordpress.svg"></td>
