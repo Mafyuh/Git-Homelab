@@ -11,3 +11,4 @@ services:
       - TZ=America/New_York
       - LOG_LEVEL=debug
     restart: unless-stopped
+    
