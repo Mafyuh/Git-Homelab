@@ -1,0 +1,13 @@
+---
+services:
+    jellyseerr:
+      image: fallenbagel/jellyseerr@sha256:f19b82dae37cd778ff1e805bce958b074aef789ab89e165a2e0d34965cd870bf
+      container_name: jellyseerr
+      ports:
+        - 5055:5055
+      volumes:
+        - /docker/appdata/jellyseerr:/app/config
+      environment:
+        - TZ=America/New_York
+        - LOG_LEVEL=debug
+      restart: unless-stopped
