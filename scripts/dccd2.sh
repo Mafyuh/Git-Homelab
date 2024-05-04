@@ -64,33 +64,29 @@ update_compose_files() {
     if [ "$local_hash" != "$remote_hash" ]; then
         log_message "STATE: Hashes don't match, checking for relevant changes..."
 
-    # Get the list of changed files
-    changed_files=$(git diff --name-only "origin/$REMOTE_BRANCH")
+        # Get the list of changed files
+        changed_files=$(git diff --name-only "origin/$REMOTE_BRANCH")
 
-    # Loop through directories matching the specified pattern
-    find "$dir" -type d -name "$folder_pattern" | while IFS= read -r folder; do
-        log_message "INFO: Found folder matching pattern: $folder"
+        # Loop through directories matching the specified pattern
+        find "$dir" -type d -name "$folder_pattern" | while IFS= read -r folder; do
+            log_message "INFO: Found folder matching pattern: $folder"
 
-        # If EXCLUDE is set and the directory matches the exclude pattern, skip
-        if [ -n "$EXCLUDE" ] && [[ "$folder" == *"$EXCLUDE"* ]]; then
-            log_message "INFO: Excluding directory $folder"
-            continue
-        fi
-
-        # Check if the docker-compose.yml file in this folder has changed
-        compose_file_changed=false
-        for file in $changed_files; do
-            log_message "DEBUG: Comparing changed file: $file"  # Added debug line
-            log_message "DEBUG: With target file: $folder/docker-compose.yml"  # Added debug line
-            log_message "DEBUG: Length of changed file: ${#file}"
-            log_message "DEBUG: Length of target file: ${#folder/docker-compose.yml}"
-            if [[ "$file" == "$folder/docker-compose.yml" ]]; then
-                compose_file_changed=true
-                break
+            # If EXCLUDE is set and the directory matches the exclude pattern, skip
+            if [ -n "$EXCLUDE" ] && [[ "$folder" == *"$EXCLUDE"* ]]; then
+                log_message "INFO: Excluding directory $folder"
+                continue
             fi
-        done
 
-            if $compose_file_changed; then
+            # Check if any changed file is within this directory
+            changed_file_in_dir=false
+            for file in $changed_files; do
+                if [[ "$file" == "$folder"* ]]; then
+                    changed_file_in_dir=true
+                    break
+                fi
+            done
+
+            if $changed_file_in_dir; then
                 # Go into the directory
                 cd "$folder" || { log_message "ERROR: Failed to enter directory $folder"; send_notification "Script Error" "Failed to update compose files: Failed to enter directory $folder"; continue; }
 
@@ -101,7 +97,7 @@ update_compose_files() {
                 # Go back to the original directory
                 cd "$dir" || { log_message "ERROR: Failed to return to directory $dir"; send_notification "Script Error" "Failed to update compose files: Failed to return to directory $dir"; exit 1; }
             else
-                log_message "INFO: No changes detected in docker-compose.yml for $folder, skipping..."
+                log_message "INFO: No changes detected in $folder, skipping..."
             fi
         done
     else
