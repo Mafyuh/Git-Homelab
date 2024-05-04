@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   ollama:
-    image: docker.mafyuh.xyz/ollama/ollama@sha256:4b11fdc55cec0a227f3f3ba9b8910940f892f98252141c97ed3bc4b45507d08d
+    image: ollama/ollama@sha256:4b11fdc55cec0a227f3f3ba9b8910940f892f98252141c97ed3bc4b45507d08d
     container_name: ollama
     restart: unless-stopped
     volumes:
@@ -29,7 +29,7 @@ services:
       - host.docker.internal:host-gateway
 
   mindsdb:
-    image: docker.mafyuh.xyz/mindsdb/mindsdb@sha256:23b125a5caad536e8af3c9eaed5028609ab8dab55e7d27bdcd91532fb1c4e177
+    image: mindsdb/mindsdb@sha256:23b125a5caad536e8af3c9eaed5028609ab8dab55e7d27bdcd91532fb1c4e177
     container_name: mindsdb
     ports:
       - 47334:47334
