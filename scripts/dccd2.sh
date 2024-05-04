@@ -82,6 +82,8 @@ update_compose_files() {
         for file in $changed_files; do
             log_message "DEBUG: Comparing changed file: $file"  # Added debug line
             log_message "DEBUG: With target file: $folder/docker-compose.yml"  # Added debug line
+            log_message "DEBUG: Length of changed file: ${#file}"
+            log_message "DEBUG: Length of target file: ${#folder/docker-compose.yml}"
             if [[ "$file" == "$folder/docker-compose.yml" ]]; then
                 compose_file_changed=true
                 break
