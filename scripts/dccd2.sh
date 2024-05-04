@@ -27,7 +27,7 @@ send_notification() {
 
 update_compose_files() {
     local dir="$1"
-    local folder_pattern="$2"  # Added parameter for folder pattern
+    local folder_pattern="$2"
 
     cd "$dir" || { log_message "ERROR: Directory doesn't exist, exiting..."; send_notification "Script Error" "Failed to update compose files: Directory doesn't exist"; exit 127; }
 
@@ -62,10 +62,10 @@ update_compose_files() {
 
     # Check if the local hash matches the remote hash
     if [ "$local_hash" != "$remote_hash" ]; then
-        log_message "STATE: Hashes don't match, updating..."
+        log_message "STATE: Hashes don't match, checking for relevant changes..."
 
-        # Get list of changed files
-        changed_files=$(git diff --name-only HEAD@{1} HEAD)
+        # Get the list of changed files
+        changed_files=$(git diff --name-only "origin/$REMOTE_BRANCH")
 
         # Loop through directories matching the specified pattern
         find "$dir" -type d -name "$folder_pattern" | while IFS= read -r folder; do
@@ -77,31 +77,28 @@ update_compose_files() {
                 continue
             fi
 
-            # Check if docker-compose.yml was changed in this directory
-            if echo "$changed_files" | grep -q "$folder/docker-compose.yml"; then
-                # Pull any changes in the Git repository
-                if ! git pull --quiet origin "$REMOTE_BRANCH"; then
-                    log_message "ERROR: Unable to pull changes from the remote repository (the server may be offline or unreachable)"
-                    send_notification "Script Error" "Failed to update compose files: Unable to pull changes from the remote repository (the server may be offline or unreachable)"
-                    exit 1
+            # Check if the docker-compose.yml file in this folder has changed
+            compose_file_changed=false
+            for file in $changed_files; do
+                if [[ "$file" == "$folder/docker-compose.yml" ]]; then
+                    compose_file_changed=true
+                    break
                 fi
+            done
 
-                # Check if the docker-compose.yml file was modified after the pull
-                if git diff --quiet --exit-code "$folder/docker-compose.yml"; then
-                    log_message "INFO: No changes in $folder/docker-compose.yml"
-                else
-                    # Go into the directory
-                    cd "$folder" || { log_message "ERROR: Failed to enter directory $folder"; send_notification "Script Error" "Failed to update compose files: Failed to enter directory $folder"; continue; }
-                    
-                    # Redeploy compose file in this directory
-                    log_message "STATE: Redeploying compose file in directory: $folder"
-                    docker compose up -d --quiet-pull
+            if $compose_file_changed; then
+                # Go into the directory
+                cd "$folder" || { log_message "ERROR: Failed to enter directory $folder"; send_notification "Script Error" "Failed to update compose files: Failed to enter directory $folder"; continue; }
 
-                    # Go back to the original directory
-                    cd "$dir" || { log_message "ERROR: Failed to return to directory $dir"; send_notification "Script Error" "Failed to update compose files: Failed to return to directory $dir"; exit 1; }
-                fi
+                # Redeploy compose file in this directory
+                log_message "STATE: Redeploying compose file in directory: $folder"
+                docker compose up -d --quiet-pull
+
+                # Go back to the original directory
+                cd "$dir" || { log_message "ERROR: Failed to return to directory $dir"; send_notification "Script Error" "Failed to update compose files: Failed to return to directory $dir"; exit 1; }
+            else
+                log_message "INFO: No changes detected in docker-compose.yml for $folder, skipping..."
             fi
-
         done
     else
         log_message "STATE: Hashes match, so nothing to do"
@@ -115,7 +112,6 @@ update_compose_files() {
 
     log_message "STATE: Done!"
 }
-
 
 usage() {
     printf "
@@ -136,7 +132,10 @@ usage() {
     exit 1
 }
 
+########################################
 # Options
+########################################
+
 while getopts ":b:d:hl:px:f:" opt; do
     case "$opt" in
         b)
@@ -171,7 +170,10 @@ while getopts ":b:d:hl:px:f:" opt; do
     esac
 done
 
+########################################
 # Script starts here
+########################################
+
 touch "$LOG_FILE"
 {
   echo "########################################"
