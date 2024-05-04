@@ -79,9 +79,6 @@ update_compose_files() {
 
             # Check if docker-compose.yml was changed in this directory
             if echo "$changed_files" | grep -q "$folder/docker-compose.yml"; then
-                # Calculate hash of docker-compose.yml before pull
-                before_pull_hash=$(md5sum "$folder/docker-compose.yml" | awk '{ print $1 }')
-
                 # Pull any changes in the Git repository
                 if ! git pull --quiet origin "$REMOTE_BRANCH"; then
                     log_message "ERROR: Unable to pull changes from the remote repository (the server may be offline or unreachable)"
@@ -89,24 +86,22 @@ update_compose_files() {
                     exit 1
                 fi
 
-                # Calculate hash of docker-compose.yml after pull
-                after_pull_hash=$(md5sum "$folder/docker-compose.yml" | awk '{ print $1 }')
-
-                # Compare hashes to determine if the file was modified
-                if [ "$before_pull_hash" != "$after_pull_hash" ]; then
+                # Check if the docker-compose.yml file was modified after the pull
+                if git diff --quiet --exit-code "$folder/docker-compose.yml"; then
+                    log_message "INFO: No changes in $folder/docker-compose.yml"
+                else
                     # Go into the directory
                     cd "$folder" || { log_message "ERROR: Failed to enter directory $folder"; send_notification "Script Error" "Failed to update compose files: Failed to enter directory $folder"; continue; }
-
+                    
                     # Redeploy compose file in this directory
                     log_message "STATE: Redeploying compose file in directory: $folder"
                     docker compose up -d --quiet-pull
 
                     # Go back to the original directory
                     cd "$dir" || { log_message "ERROR: Failed to return to directory $dir"; send_notification "Script Error" "Failed to update compose files: Failed to return to directory $dir"; exit 1; }
-                else
-                    log_message "INFO: No changes in $folder/docker-compose.yml"
                 fi
             fi
+
         done
     else
         log_message "STATE: Hashes match, so nothing to do"
