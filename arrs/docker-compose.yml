@@ -1,7 +1,7 @@
 ---
 services:
   bazarr:
-    image: lscr.io/linuxserver/bazarr@sha256:2c9269dd25c62d46e679a035849f32e963152ec44000e30f008d211a2f70e80c
+    image: docker.mafyuh.xyz/linuxserver/bazarr@sha256:2c9269dd25c62d46e679a035849f32e963152ec44000e30f008d211a2f70e80c
     container_name: bazarr
     ports:
       - "6767:6767"
@@ -15,7 +15,7 @@ services:
       - PGID=1000
 
   lidarr:
-    image: lscr.io/linuxserver/lidarr@sha256:e4fa87dce39a715e6b70932060ac131908310040409a7f9546280d8d5c7b89b1
+    image: docker.mafyuh.xyz/linuxserver/lidarr@sha256:e4fa87dce39a715e6b70932060ac131908310040409a7f9546280d8d5c7b89b1
     container_name: lidarr
     ports:
       - "8686:8686"
@@ -29,7 +29,7 @@ services:
       - PGID=1000
 
   prowlarr:
-    image: lscr.io/linuxserver/prowlarr@sha256:31279c8396ad7f8f240cf8037f3702491beb305ac3675cc4ed7fec2510984cf1
+    image: docker.mafyuh.xyz/linuxserver/prowlarr@sha256:31279c8396ad7f8f240cf8037f3702491beb305ac3675cc4ed7fec2510984cf1
     container_name: prowlarr
     ports:
       - "9696:9696"
@@ -41,7 +41,7 @@ services:
       - PGID=1000
 
   radarr:
-    image: lscr.io/linuxserver/radarr@sha256:21a70b6f1a3305e457b2bc18c44afd19c20c2bd099c0830e9effe1f7fe68ae04
+    image: docker.mafyuh.xyz/linuxserver/radarr@sha256:21a70b6f1a3305e457b2bc18c44afd19c20c2bd099c0830e9effe1f7fe68ae04
     container_name: radarr
     ports:
       - "7878:7878"
@@ -55,7 +55,7 @@ services:
       - PGID=1000
 
   sonarr:
-    image: lscr.io/linuxserver/sonarr@sha256:e1d926d5d6fd8bbe7fd4c4dd9007b790b40263783869c2357f2539dac1342575
+    image: docker.mafyuh.xyz/linuxserver/sonarr@sha256:e1d926d5d6fd8bbe7fd4c4dd9007b790b40263783869c2357f2539dac1342575
     container_name: sonarr
     ports:
       - "8989:8989"
@@ -89,7 +89,7 @@ services:
       - AUTH_OIDC_ADMIN_GROUP=${AUTH_OIDC_ADMIN_GROUP}
 
   doplarr:
-    image: lscr.io/linuxserver/doplarr@sha256:3c30f1e2bf5370141bc2a8694b6be0f005dc825387b952a4c9169c451cbf5310
+    image: docker.mafyuh.xyz/linuxserver/doplarr@sha256:3c30f1e2bf5370141bc2a8694b6be0f005dc825387b952a4c9169c451cbf5310
     container_name: doplarr
     environment:
       - PUID=1000
@@ -114,7 +114,7 @@ services:
     restart: unless-stopped
 
   jfa-go:
-    image: hrfee/jfa-go
+    image: docker.mafyuh.xyz/hrfee/jfa-go
     container_name: jfa-go
     ports:
       - 8056:8056
