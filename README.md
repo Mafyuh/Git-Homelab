@@ -144,6 +144,11 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
         <td>Self-hosted Docker registry to help lower Docker pulls</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://play-lh.googleusercontent.com/GBhNhKgjfy6i6Ucc0hyB-79WmcV7LvKSfGSy8iStFdZSaLioKQp5rPWjqsh2YFRRZsE1"></td>
+        <td><a href="https://twingate.com">Twingate Connectors</a></td>
+        <td>Main VPN between homelab and cloud VPS's</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/uptimekuma.svg"></td>
         <td><a href="https://github.com/louislam/uptime-kuma">Uptime Kuma</a></td>
         <td>Self hosted service uptime tracker</td>
@@ -176,11 +181,6 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
         <td><img vertical-align=baseline width="32" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apache_Guacamole_logo.png"></td>
         <td><a href="https://guacamole.apache.org/">Guacamole</a></td>
         <td>Remote access in browser via SSH, RDP, VNC, etc</td>
-    </tr>
-    <tr>
-        <td><img vertical-align=baseline width="32" src="https://play-lh.googleusercontent.com/GBhNhKgjfy6i6Ucc0hyB-79WmcV7LvKSfGSy8iStFdZSaLioKQp5rPWjqsh2YFRRZsE1"></td>
-        <td><a href="https://twingate.com">Twingate Connectors</a></td>
-        <td>Main VPN between homelab and cloud VPS's</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/homeassistant.svg"></td>
