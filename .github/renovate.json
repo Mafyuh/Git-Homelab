@@ -17,8 +17,7 @@
   ],
   "packageRules": [
     {
-      "updateTypes": ["digest"],
-      "fetchChangeLogs": "pr"
+      "updateTypes": ["digest"]
     },
     {
       "matchPackageNames": ["nginx-proxy-manager"],
