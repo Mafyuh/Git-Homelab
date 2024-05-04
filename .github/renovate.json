@@ -17,8 +17,7 @@
   ],
   "packageRules": [
     {
-      "updateTypes": ["digest"],
-      "fetchChangeLogs": "pr"
+      "updateTypes": ["digest"]
     },
     {
       "matchPackageNames": ["nginx-proxy-manager"],
@@ -39,6 +38,10 @@
     {
       "matchPackageNames": ["binhex/arch-qbittorrentvpn"],
       "customChangelogUrl": "https://github.com/binhex/arch-qbittorrentvpn/releases/"
+    },
+    {
+      "matchPackageNames": ["lscr.io/linuxserver/sonarr"],
+      "customChangelogUrl": "https://github.com/linuxserver/docker-sonarr/releases"
     }
   ]
 }
