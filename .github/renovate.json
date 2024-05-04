@@ -37,11 +37,15 @@
     },
     {
       "matchPackageNames": ["binhex/arch-qbittorrentvpn"],
-      "customChangelogUrl": "https://github.com/binhex/arch-qbittorrentvpn/releases/"
+      "customChangelogUrl": "https://github.com/binhex/arch-qbittorrentvpn/releases"
     },
     {
       "matchPackageNames": ["lscr.io/linuxserver/sonarr"],
       "customChangelogUrl": "https://github.com/linuxserver/docker-sonarr/releases"
+    },
+    {
+      "matchPackageNames": ["lscr.io/linuxserver/jellyfin"],
+      "customChangelogUrl": "https://github.com/linuxserver/docker-jellyfin"
     }
   ]
 }
