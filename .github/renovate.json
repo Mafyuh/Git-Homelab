@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:base"
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard",
@@ -28,7 +28,7 @@
       "customChangelogUrl": "https://github.com/open-webui/open-webui/releases"
     },
     {
-      "matchPackageNames": ["ollama/ollama"],
+      "matchPackageNames": ["docker.mafyuh.xyz/ollama/ollama"],
       "customChangelogUrl": "https://github.com/ollama/ollama/releases"
     },
     {
@@ -40,11 +40,11 @@
       "customChangelogUrl": "https://github.com/binhex/arch-qbittorrentvpn/releases"
     },
     {
-      "matchPackageNames": ["lscr.io/linuxserver/sonarr"],
+      "matchPackageNames": ["docker.mafyuh.xyz/linuxserver/sonarr"],
       "customChangelogUrl": "https://github.com/linuxserver/docker-sonarr/releases"
     },
     {
-      "matchPackageNames": ["lscr.io/linuxserver/jellyfin"],
+      "matchPackageNames": ["docker.mafyuh.xyz/linuxserver/jellyfin"],
       "customChangelogUrl": "https://github.com/linuxserver/docker-jellyfin"
     }
   ]
