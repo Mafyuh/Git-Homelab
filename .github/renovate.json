@@ -45,7 +45,7 @@
     },
     {
       "matchPackageNames": ["lscr.io/linuxserver/jellyfin"],
-      "customChangelogUrl": "https://github.com/linuxserver/docker-jellyfin/releases"
+      "customChangelogUrl": "https://github.com/linuxserver/docker-jellyfin"
     }
   ]
 }
