@@ -64,27 +64,29 @@ update_compose_files() {
     if [ "$local_hash" != "$remote_hash" ]; then
         log_message "STATE: Hashes don't match, checking for relevant changes..."
 
-        # Get the list of changed files
-        changed_files=$(git diff --name-only "origin/$REMOTE_BRANCH")
+    # Get the list of changed files
+    changed_files=$(git diff --name-only "origin/$REMOTE_BRANCH")
 
-        # Loop through directories matching the specified pattern
-        find "$dir" -type d -name "$folder_pattern" | while IFS= read -r folder; do
-            log_message "INFO: Found folder matching pattern: $folder"
+    # Loop through directories matching the specified pattern
+    find "$dir" -type d -name "$folder_pattern" | while IFS= read -r folder; do
+        log_message "INFO: Found folder matching pattern: $folder"
 
-            # If EXCLUDE is set and the directory matches the exclude pattern, skip
-            if [ -n "$EXCLUDE" ] && [[ "$folder" == *"$EXCLUDE"* ]]; then
-                log_message "INFO: Excluding directory $folder"
-                continue
+        # If EXCLUDE is set and the directory matches the exclude pattern, skip
+        if [ -n "$EXCLUDE" ] && [[ "$folder" == *"$EXCLUDE"* ]]; then
+            log_message "INFO: Excluding directory $folder"
+            continue
+        fi
+
+        # Check if the docker-compose.yml file in this folder has changed
+        compose_file_changed=false
+        for file in $changed_files; do
+            log_message "DEBUG: Comparing changed file: $file"  # Added debug line
+            log_message "DEBUG: With target file: $folder/docker-compose.yml"  # Added debug line
+            if [[ "$file" == "$folder/docker-compose.yml" ]]; then
+                compose_file_changed=true
+                break
             fi
-
-            # Check if the docker-compose.yml file in this folder has changed
-            compose_file_changed=false
-            for file in $changed_files; do
-                if [[ "$file" == "$folder/docker-compose.yml" ]]; then
-                    compose_file_changed=true
-                    break
-                fi
-            done
+        done
 
             if $compose_file_changed; then
                 # Go into the directory
