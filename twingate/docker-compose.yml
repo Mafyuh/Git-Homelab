@@ -1,0 +1,13 @@
+services:
+  twingate-famous-alligator:
+    image: twingate/connector@sha256:ad34eb54829b9684bf980f06c08d8fec4cca22e8c2698ce35db19f340922d0da
+    container_name: twingate-famous-alligator
+    restart: unless-stopped
+    environment:
+      - TWINGATE_NETWORK=$TWINGATE_NETWORK
+      - TWINGATE_ACCESS_TOKEN=$TWINGATE_ACCESS_TOKEN
+      - TWINGATE_REFRESH_TOKEN=$TWINGATE_REFRESH_TOKEN
+      - TWINGATE_LABEL_HOSTNAME=${HOSTNAME}
+      - TWINGATE_LABEL_DEPLOYED_BY=docker
+    sysctls:
+      - net.ipv4.ping_group_range=0 2147483647
