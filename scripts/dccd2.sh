@@ -141,6 +141,82 @@ usage() {
     exit 1
 }
 
+# Options
+while getopts ":b:d:hl:px:f:" opt; do
+    case "$opt" in
+        b)
+            REMOTE_BRANCH="$OPTARG"
+            ;;
+        d)
+            BASE_DIR="$OPTARG"
+            ;;
+        h)
+            usage
+            ;;
+        l)
+            LOG_FILE="$OPTARG"
+            ;;
+        p)
+            PRUNE=1
+            ;;
+        x)
+            EXCLUDE="$OPTARG"
+            ;;
+        f)
+            FOLDER_PATTERN="$OPTARG"
+            ;;
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            usage
+            ;;
+        :)
+            echo "Option -$OPTARG requires an argument." >&2
+            usage
+            ;;
+    esac
+done
+
+# Script starts here
+touch "$LOG_FILE"
+{
+  echo "########################################"
+  echo "# Starting!"
+  echo "########################################"
+} >> "$LOG_FILE"
+
+# Check if BASE_DIR is provided
+if [ -z "$BASE_DIR" ]; then
+    log_message "ERROR: The base directory (-d) is required, exiting..."
+    send_notification "Script Error" "Failed to update compose files: Base directory (-d) is required"
+    usage
+else 
+    log_message "INFO:  Base directory is set to $BASE_DIR"
+fi
+
+# Check if REMOTE_BRANCH is provided
+if [ -z "$REMOTE_BRANCH" ]; then
+    log_message "INFO:  The remote branch isn't specified, so using $REMOTE_BRANCH"
+else
+    log_message "INFO:  The remote branch is set to $REMOTE_BRANCH"
+fi
+
+# Check if EXCLUDE is provided
+if [ -n "$EXCLUDE" ]; then
+    log_message "INFO:  Will be excluding pattern $EXCLUDE"
+fi
+
+# Check if FOLDER_PATTERN is provided
+if [ -z "$FOLDER_PATTERN" ]; then
+    log_message "ERROR: The folder pattern (-f) is required, exiting..."
+    send_notification "Script Error" "Failed to update compose files: Folder pattern (-f) is required"
+    usage
+else
+    log_message "INFO:  Folder pattern is set to $FOLDER_PATTERN"
+fi
+
+update_compose_files "$BASE_DIR" "$FOLDER_PATTERN"
+
+
 ########################################
 # Options
 ########################################
