@@ -2,7 +2,7 @@ version: '3'
 
 services:
   drone:
-    image: drone/drone:2.23.0
+    image: docker.mafyuh.xyz/drone/drone:2.23.0
     environment:
       - DRONE_GITEA_CLIENT_ID=$DRONE_GITEA_CLIENT_ID
       - DRONE_GITEA_CLIENT_SECRET=$DRONE_GITEA_CLIENT_SECRET
@@ -18,7 +18,7 @@ services:
       - "444:443"
     restart: always
   drone-runner:
-    image: drone/drone-runner-docker@sha256:e3595c0a0a60852d2f55750e50df6d2635b20c424d43c419575b46490d6aa864
+    image: docker.mafyuh.xyz/drone/drone-runner-docker@sha256:e3595c0a0a60852d2f55750e50df6d2635b20c424d43c419575b46490d6aa864
     environment:
       - DRONE_RPC_PROTO=https
       - DRONE_RPC_HOST=$DRONE_RPC_HOST
