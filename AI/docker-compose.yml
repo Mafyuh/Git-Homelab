@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   ollama:
-    image: ollama/ollama@sha256:ab62ecc09c2f9a64f7bcdfd585d9cb25c38f4b430639e1fb03fe6155cfd02e43
+    image: ollama/ollama@sha256:6f2f92bd0f3b2785f1d211552fd20de78b5a5b88eea2ba131e1ec2cd2bf36a33
     container_name: ollama
     restart: unless-stopped
     volumes:
