@@ -1,7 +1,7 @@
 ---
 services:
   jellyfin:
-    image: lscr.io/linuxserver/jellyfin@sha256:8e2c0ce0156eae6cba0487d5d1bc03d821e0b3f6a51a72d966517ec8aa9e90d4
+    image: docker.mafyuh.xyz/linuxserver/jellyfin@sha256:8e2c0ce0156eae6cba0487d5d1bc03d821e0b3f6a51a72d966517ec8aa9e90d4
     container_name: jellyfin
     devices:
       - /dev/dri/renderD129:/dev/dri/renderD129
@@ -21,7 +21,7 @@ services:
     restart: unless-stopped
 
   makemkv:
-    image: jlesage/makemkv@sha256:7e7e6a00431d0247dd61ed714b7ea51a3d36db6837c7bbc5c0f6cac119a1548b
+    image: docker.mafyuh.xyz/jlesage/makemkv@sha256:7e7e6a00431d0247dd61ed714b7ea51a3d36db6837c7bbc5c0f6cac119a1548b
     container_name: makemkv
     ports:
       - 5800:5800
