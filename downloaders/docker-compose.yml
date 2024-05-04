@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   sabnzbd:
-    image: docker.mafyuh.xyz/linuxserver/sabnzbd@sha256:762495209399e5c7535fabecec2732f1dc22177e302187ea0c7e1473d9050bec
+    image: lscr.io/linuxserver/sabnzbd@sha256:762495209399e5c7535fabecec2732f1dc22177e302187ea0c7e1473d9050bec
     container_name: sabnzbd
     environment:
       - PUID=1000
@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
 
   arch-qbittorrentvpn:
-    image: docker.mafyuh.xyz/binhex/arch-qbittorrentvpn@sha256:34e13f69e25ac5d13a1c54ecb0f43de2213d8e7335e4202c87441d5a558c1a55
+    image: binhex/arch-qbittorrentvpn@sha256:34e13f69e25ac5d13a1c54ecb0f43de2213d8e7335e4202c87441d5a558c1a55
     container_name: qbittorrentvpn
     volumes:
       - '/docker/appdata/qbitty:/config'
