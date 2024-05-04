@@ -1,7 +1,7 @@
 ---
 services:
   kasm:
-    image: docker.mafyuh.xyz/linuxserver/kasm@sha256:95c8d5d0f588cb3982da344c34b6acbebb5f428176947a923e5cc0cec4710f4d
+    image: lscr.io/linuxserver/kasm@sha256:95c8d5d0f588cb3982da344c34b6acbebb5f428176947a923e5cc0cec4710f4d
     container_name: kasm
     privileged: true
     environment:
