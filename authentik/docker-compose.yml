@@ -80,7 +80,7 @@ services:
       - postgresql
       - redis
   authentik_ldap:
-        image: ghcr.io/goauthentik/ldap@sha256:6640ffc0b2001fec7ba7e00727215f20ed6a06a7f3ee807a931e382a4d0173f9
+        image: ghcr.io/goauthentik/ldap@sha256:7f317da9b736dec3e53b71b7face1787d4f15aee00e80d003e5ff3b2d49ee382
         ports:
             - 389:3389
             - 636:6636
