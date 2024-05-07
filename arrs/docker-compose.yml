@@ -1,7 +1,7 @@
 ---
 services:
   bazarr:
-    image: lscr.io/linuxserver/bazarr@sha256:2c9269dd25c62d46e679a035849f32e963152ec44000e30f008d211a2f70e80c
+    image: lscr.io/linuxserver/bazarr@sha256:081575bb4b4936b3dd9fce9bd5bcb7a9140e9b072bada4115b45b0db11daa913
     container_name: bazarr
     ports:
       - "6767:6767"
@@ -70,7 +70,7 @@ services:
 
   homarr:
     container_name: homarr
-    image: ghcr.io/ajnart/homarr@sha256:caf77d79272d16e8081a90e0f2b2928d385ca0b3c0dd36e50cb46ff3aa940ab9
+    image: ghcr.io/ajnart/homarr@sha256:c270b55092a7519b1f7e8f31253b6faccf3711422d474a3c1ad14e85e9fede60
     restart: unless-stopped
     volumes:
       - /docker/appdata/homarr/configs:/app/data/configs
