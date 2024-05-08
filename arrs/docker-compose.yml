@@ -70,7 +70,7 @@ services:
 
   homarr:
     container_name: homarr
-    image: ghcr.io/ajnart/homarr@sha256:c270b55092a7519b1f7e8f31253b6faccf3711422d474a3c1ad14e85e9fede60
+    image: ghcr.io/ajnart/homarr@sha256:e4f51bc422be187c878082060eb720da7de64e5c650ea3fa86ab80981950decd
     restart: unless-stopped
     volumes:
       - /docker/appdata/homarr/configs:/app/data/configs
