@@ -16,7 +16,7 @@ services:
       - gitea_main
 
   nginx-proxy-manager:
-    image: jc21/nginx-proxy-manager@sha256:868d810e78c76fc7875b8c321f55e5a49e265bafbc19bcb648ac357b59a4ee42
+    image: jc21/nginx-proxy-manager@sha256:84a47c5826a8fc8df54e4cd793b441f02959d5bd9a5214facaa196f314985e27
     container_name: nginx-proxy-manager
     ports:
       - 80:80
