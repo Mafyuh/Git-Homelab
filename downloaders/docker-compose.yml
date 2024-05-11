@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   sabnzbd:
-    image: ghcr.io/linuxserver/sabnzbd:4.3.1
+    image: ghcr.io/linuxserver/sabnzbd:4.3.1-ls160
     container_name: sabnzbd
     environment:
       - PUID=1000
