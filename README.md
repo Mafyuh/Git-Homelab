@@ -99,6 +99,11 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
         <td>Reverse Proxy used for its simplicity (1/3)</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/n8n.svg"></td>
+        <td><a href="https://n8n.io">n8n</a></td>
+        <td>Switching from ActivePieces to n8n, more robust</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://ollama.com/public/ollama.png"></td>
         <td><a href="https://ollama.com/">Ollama</a></td>
         <td>Easiest way to run LLM's on your own hardware</td>
@@ -219,3 +224,4 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
 
 - [] Get all dependencies configured to pull changelogs on PR
 - [] CI Passing Badge in README
+- [] Add README to each directory
