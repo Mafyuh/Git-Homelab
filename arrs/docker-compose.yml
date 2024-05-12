@@ -114,7 +114,7 @@ services:
     restart: unless-stopped
 
   jfa-go:
-    image: lscr.io/hrfee/jfa-go
+    image: hrfee/jfa-go
     container_name: jfa-go
     ports:
       - 8056:8056
