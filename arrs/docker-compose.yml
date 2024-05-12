@@ -55,7 +55,7 @@ services:
       - PGID=1000
 
   sonarr:
-    image: ghcr.io/linuxserver/sonarr:4.0.4.1491-ls237
+    image: ghcr.io/linuxserver/sonarr@sha256:25e0f3b3741cf8df6c322d6c9016b5be91ca6e154653b4d01c8c125bf1ce75c0
     container_name: sonarr
     ports:
       - "8989:8989"
@@ -89,7 +89,7 @@ services:
       - AUTH_OIDC_ADMIN_GROUP=${AUTH_OIDC_ADMIN_GROUP}
 
   doplarr:
-    image: lscr.io/linuxserver/doplarr@sha256:70fdeb95afe4394ad13ed990c21d553fa00cd5aab752f93df153d30a15760e80
+    image: lscr.io/linuxserver/doplarr@sha256:c0ea5dfe9564e39c7634ec3c7775a0d7f2edd3e03c2b0d6c00e72d18f43aae43
     container_name: doplarr
     environment:
       - PUID=1000
@@ -114,7 +114,7 @@ services:
     restart: unless-stopped
 
   jfa-go:
-    image: lscr.io/hrfee/jfa-go
+    image: hrfee/jfa-go
     container_name: jfa-go
     ports:
       - 8056:8056
