@@ -69,6 +69,18 @@ services:
     restart: unless-stopped
     networks:
       - gitea_main
+  
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    container_name: n8n
+    ports:
+      - 5678:5678
+    volumes:
+      - n8n_data:/home/node/.n8n
+    restart: unless-stopped
+    networks:
+      - gitea_main
+
 
 networks:
   gitea_main:
@@ -76,3 +88,4 @@ networks:
 
 volumes:
   linkstack:
+  n8n_data:
