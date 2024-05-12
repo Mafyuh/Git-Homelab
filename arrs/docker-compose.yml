@@ -89,7 +89,7 @@ services:
       - AUTH_OIDC_ADMIN_GROUP=${AUTH_OIDC_ADMIN_GROUP}
 
   doplarr:
-    image: lscr.io/linuxserver/doplarr@sha256:c0ea5dfe9564e39c7634ec3c7775a0d7f2edd3e03c2b0d6c00e72d18f43aae43
+    image: ghcr.io/linuxserver/doplarr@sha256:0550057b28727d43e112ef1d31ed47c17f68e96a05eaffeb7357ac89de9464ab
     container_name: doplarr
     environment:
       - PUID=1000
@@ -114,7 +114,7 @@ services:
     restart: unless-stopped
 
   jfa-go:
-    image: hrfee/jfa-go
+    image: docker.mafyuh.xyz/hrfee/jfa-go
     container_name: jfa-go
     ports:
       - 8056:8056
