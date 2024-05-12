@@ -214,3 +214,8 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
 
 ### VPS (arm)
 [![Oracle](https://img.shields.io/badge/-Oracle_Cloud-%23c9d1d9?logo=oracle&logoColor=red)](https://www.oracle.com/cloud/)
+
+## To-Do
+
+- [] Get all dependencies configured to pull changelogs on PR
+- [] CI Passing Badge in README
