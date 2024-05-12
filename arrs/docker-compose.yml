@@ -89,7 +89,7 @@ services:
       - AUTH_OIDC_ADMIN_GROUP=${AUTH_OIDC_ADMIN_GROUP}
 
   doplarr:
-    image: lscr.io/linuxserver/doplarr@sha256:70fdeb95afe4394ad13ed990c21d553fa00cd5aab752f93df153d30a15760e80
+    image: lscr.io/linuxserver/doplarr@sha256:c0ea5dfe9564e39c7634ec3c7775a0d7f2edd3e03c2b0d6c00e72d18f43aae43
     container_name: doplarr
     environment:
       - PUID=1000
