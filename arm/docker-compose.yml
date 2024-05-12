@@ -77,6 +77,10 @@ services:
       - 5678:5678
     volumes:
       - n8n_data:/home/node/.n8n
+    environment:
+      - GENERIC_TIMEZONE=America/New_York
+      - TZ=America/New_York
+      - WEBHOOK_URL=$WEBHOOK_URL
     restart: unless-stopped
     networks:
       - gitea_main
