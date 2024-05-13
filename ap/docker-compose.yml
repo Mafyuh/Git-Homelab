@@ -1,7 +1,7 @@
 version: '3.0'
 services:
   activepieces:
-    image: docker.mafyuh.xyz/activepieces/activepieces@sha256:f6278ba069e564765d7c319aab25ad604526d5c2459f25c1f6a47bc6cf2c70cc
+    image: docker.mafyuh.xyz/activepieces/activepieces:0.26.0
     container_name: activepieces
     restart: unless-stopped
     ## Enable the following line if you already use AP_EXECUTION_MODE with SANDBOXED or old activepieces, checking the breaking change documentation for more info.
