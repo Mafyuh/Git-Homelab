@@ -1,7 +1,7 @@
 ---
 services:
   jellyfin:
-    image: docker.mafyuh.xyz/linuxserver/jellyfin@sha256:04a8648d683b1fd9cc56a376d0d94ab6a6dc3da09ed1ff5e531b96e64ae34d5d
+    image: docker.mafyuh.xyz/linuxserver/jellyfin@sha256:c001e01b822888e8a6068626d25d0ced74c88f042adf6b47f31b1b82bfc25f5b
     container_name: jellyfin
     devices:
       - /dev/dri/renderD129:/dev/dri/renderD129
