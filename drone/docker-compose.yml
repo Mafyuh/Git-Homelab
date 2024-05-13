@@ -2,7 +2,7 @@ version: '3'
 
 services:
   drone:
-    image: docker.mafyuh.xyz/drone/drone:2.23.0
+    image: docker.mafyuh.xyz/drone/drone:2.24.0
     environment:
       - DRONE_GITEA_CLIENT_ID=$DRONE_GITEA_CLIENT_ID
       - DRONE_GITEA_CLIENT_SECRET=$DRONE_GITEA_CLIENT_SECRET
