@@ -225,3 +225,4 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
 - [] Get all dependencies configured to pull changelogs on PR
 - [] CI Passing Badge in README
 - [] Add README to each directory
+- [x] linuxserver containers get upstream release notes as well
