@@ -1,5 +1,5 @@
 # Auto-Homelab
-Homelab environment defined in code. Using Drone and Renovate bot for CI along with bash scripts for CD. Very much still a WIP.
+Homelab docker-compose environment defined in code. Using Drone and Renovate bot for CI along with bash scripts for CD. Very much still a WIP.
 
 ## Apps in Repo:
 <table>
@@ -225,4 +225,4 @@ Homelab environment defined in code. Using Drone and Renovate bot for CI along w
 - [] Get all dependencies configured to pull changelogs on PR
 - [] CI Passing Badge in README
 - [] Add README to each directory
-- [x] linuxserver containers get upstream release notes as well
+- [x] Get upstream release notes for linuxserver containers
