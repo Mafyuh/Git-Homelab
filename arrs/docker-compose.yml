@@ -23,6 +23,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/lidarr:/config
       - /data:/data
+      - /docker/appdata/lidarr-extended:/custom-services.d
+      - /docker/appdata/lidarr-extended1:/custom-cont-init.d
     restart: unless-stopped
     environment:
       - PUID=1000
