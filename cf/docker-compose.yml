@@ -1,5 +1,5 @@
 ---
 services:
   cf-tunnel:
-    image: docker.mafyuh.xyz/cloudflare/cloudflared@sha256:9eb8554739a1d6b4d63091f7b724cbd9bb39b8c0c23e38200a9e7ad86ccc67cd
+    image: docker.mafyuh.xyz/cloudflare/cloudflared@sha256:a3ba3f799551b9d9e5f15eba4b3025599a90c6f8aa1583003218e1c288c41c6a
     command: tunnel --no-autoupdate run --token $CF_TOKEN
