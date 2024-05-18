@@ -15,7 +15,7 @@ services:
     networks:
       - gitea_main
     volumes:
-      - /home/ubuntu/forgejo/data:/data
+      - /home/ubuntu/gitea/data:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
