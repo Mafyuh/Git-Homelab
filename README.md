@@ -222,7 +222,7 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
 
 ## To-Do
 
-- [] Get all dependencies configured to pull changelogs on PR
-- [] CI Passing Badge in README
-- [] Add README to each directory
+- [ ] Get all dependencies configured to pull changelogs on PR
+- [ ] CI Passing Badge in README
+- [ ] Add README to each directory
 - [x] Get upstream release notes for linuxserver containers
