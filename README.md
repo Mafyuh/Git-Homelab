@@ -44,6 +44,11 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
         <td>Proxy server to bypass Cloudflare and DDoS-GUARD protection</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/forgejo.svg"></td>
+        <td><a href="https://forgejo.org/">Forgejo</a></td>
+        <td>This site</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/gotify.svg"></td>
         <td><a href="https://gotify.net/">Gotfiy</a></td>
         <td>Self hosted notification service</td>
@@ -176,11 +181,6 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/wordpress.svg"></td>
         <td><a href="https://wordpress.org/">Wordpress</a></td>
         <td>WooCommerce store setup for JF PPV access</td>
-    </tr>
-    <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/forgejo.svg"></td>
-        <td><a href="https://forgejo.org/">Forgejo</a></td>
-        <td>This site</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apache_Guacamole_logo.png"></td>
