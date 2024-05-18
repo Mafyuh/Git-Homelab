@@ -15,7 +15,7 @@ services:
     networks:
       - gitea_main
     volumes:
-      - /home/ubuntu/gitea/data:/data
+      - /home/ubuntu/forgejo/data:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -35,7 +35,7 @@ services:
     networks:
       - gitea_main
     volumes:
-      - /home/ubuntu/gitea/mysql:/var/lib/mysql
+      - /home/ubuntu/forgejo/mysql:/var/lib/mysql
 
   gotify:
     image: docker.mafyuh.xyz/gotify/server-arm7@sha256:b1fff7e7940fbf0526c2cff20df7a0f41d4618ea373fa9f812fb335c3ddb0b98
