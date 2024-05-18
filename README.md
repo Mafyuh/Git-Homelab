@@ -99,6 +99,11 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
         <td>Connects Ollama models to 100+ different databases, easy to use.</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/nbxyz-logo.svg"></td>
+        <td><a href="https://netboot.xyz/">Netboot.xyz</a></td>
+        <td>Network boot instead of using my ventoy USB</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/nginxproxymanager.svg"></td>
         <td><a href="https://nginxproxymanager.com/">Nginx Proxy Manager</a></td>
         <td>Reverse Proxy used for its simplicity (1/3)</td>
@@ -203,7 +208,6 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
         <td>Analytics tracker for certain websites (Blog)</td>
     </tr>
 </table>
-
 
 ### Hypervisor: 
 [![Proxmox](https://img.shields.io/badge/-Proxmox-%23c9d1d9?logo=Proxmox)](https://www.proxmox.com)
