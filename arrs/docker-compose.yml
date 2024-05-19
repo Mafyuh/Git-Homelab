@@ -124,6 +124,21 @@ services:
       - /docker/appdata/jfa-go/config:/data
       - /etc/localtime:/etc/localtime:ro
 
+  cadvisor:
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    ports:
+      - 9999:8080
+    container_name: cadvisor
+    privileged: true
+    devices:
+      - /dev/kmsg
+    image: gcr.io/cadvisor/cadvisor:v0.49.1
+
 networks:
   default:
     name: arrs_default
