@@ -219,6 +219,7 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
 
 ### OS:
 [![Ubuntu](https://img.shields.io/badge/Ubuntu_22.04-%23c9d1d9?&logo=ubuntu&logoColor=red)](https://releases.ubuntu.com/jammy/)
+[![Ubuntu](https://img.shields.io/badge/Ubuntu_24-%23c9d1d9?&logo=ubuntu&logoColor=red)](https://releases.ubuntu.com/noble/)
 
 
 ### Tools:
@@ -228,6 +229,9 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
 
 ### VPS (arm)
 [![Oracle](https://img.shields.io/badge/-Oracle_Cloud-%23c9d1d9?logo=oracle&logoColor=red)](https://www.oracle.com/cloud/)
+
+### Firewall
+[![pfSense](https://img.shields.io/badge/-pfSense-%23c9d1d9?logo=pfsense&logoColor=blue)](https://www.pfsense.org/)
 
 ## To-Do
 
