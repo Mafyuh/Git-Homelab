@@ -113,6 +113,7 @@ services:
       - 5678:5678
     volumes:
       - n8n_data:/home/node/.n8n
+      - /home/mafyuh/Auto-Homelab:/home/mafyuh/Auto-Homelab
     environment:
       - GENERIC_TIMEZONE=America/New_York
       - TZ=America/New_York
