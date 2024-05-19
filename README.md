@@ -14,6 +14,16 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
         <td>Selfhosted Zapier/n8n alternative </td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/adguardhome.svg"></td>
+        <td><a href="https://adguard.com/en/adguard-home/overview.html">AdGuard Home</a></td>
+        <td>Network Wide DNS adblock as well as my DNS server (2/2)</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/adguardhomesync-icon.png"></td>
+        <td><a href="https://docs.linuxserver.io/images/docker-adguardhome-sync/">AdGuard Home Sync</a></td>
+        <td>Syncs my instances of Adguard</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/authentik.svg"></td>
         <td><a href="https://goauthentik.io/">authentik</a></td>
         <td>Open Source Identity Provider </td>
@@ -196,11 +206,6 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/homeassistant.svg"></td>
         <td><a href="https://www.home-assistant.io/">Home Assistant</a></td>
         <td>Slowly migrating over to Home Assistant from Google Home</td>
-    </tr>
-    <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/adguardhome.svg"></td>
-        <td><a href="https://adguard.com/en/adguard-home/overview.html">AdGuard Home</a></td>
-        <td>Network Wide DNS adblock as well as my DNS server</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/plausible.svg"></td>
