@@ -243,6 +243,6 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
 ## To-Do
 
 - [ ] Get all dependencies configured to pull changelogs on PR
-- [ ] CI Passing Badge in README
+- [x] CI Passing Badge in README https://git.mafyuh.dev/mafyuh/Auto-Homelab/commit/cb514e2b09ff5fe55502b92815ed34b7bdacfd0c
 - [ ] Add README to each directory
 - [x] Get upstream release notes for linuxserver containers https://git.mafyuh.dev/mafyuh/Auto-Homelab/pulls/207#issuecomment-1697
