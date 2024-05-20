@@ -10,7 +10,8 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
 <p align="center">
   <a href="https://git.mafyuh.dev/mafyuh/Auto-Homelab/wiki/?action=_pages">Wiki</a> | 
   <a href="https://loganmarchione.com/2022/10/how-to-run-renovate-on-a-self-hosted-gitea-and-drone-instance/">How to Setup</a> |
-  <a href="https://mafyuh.com">Blog</a> 
+  <a href="https://mafyuh.com">Blog</a> |
+  <a href="https://www.youtube.com/watch?v=5CkCr9U_Q1Y">Inspiration</a>
 </p>
 
 <div align="center">
