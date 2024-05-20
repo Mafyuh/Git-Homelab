@@ -1,3 +1,4 @@
+[![Build Status](https://drone.mafyuh.dev/api/badges/mafyuh/Auto-Homelab/status.svg)](https://drone.mafyuh.dev/mafyuh/Auto-Homelab)
 [![Pulls](https://git.mafyuh.dev/mafyuh/Auto-Homelab/badges/pulls.svg)](https://git.mafyuh.dev/mafyuh/Auto-Homelab/pulls)
 # Auto-Homelab
 Homelab docker-compose environment defined in code. Using Drone and Renovate bot for CI along with n8n automation for CD.
