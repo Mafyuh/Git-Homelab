@@ -248,6 +248,52 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
 
 </div>
 
+<div align="center">
+
+## Full Workflow Chart
+
+</div>
+
+```mermaid
+graph TD
+  A1((Renovate Bot Scans for Updates)) --> A2{Updates Found?}
+  A2 -- Yes --> B[Make PR]
+  A2 -- No --> C(End)
+
+  B --> D{PR Merged?}
+  D -- No --> E(End)
+  
+  subgraph Handle Merged PR
+    D -- Yes --> F[Extract App Name]
+    F --> G[SSH to Host Machine]
+    G --> H[Git Pull & Docker Compose Up]
+    H --> I{Error?}
+    I -- Yes --> J[Send Gotify Notification]
+    J --> K(End)
+    I -- No --> L[Extract PR Number]
+    L --> M[Add PR Number to Forgejo API URL]
+    M --> N[Send Review with Logs]
+    N --> O(End)
+  end
+  
+  subgraph Notification on PR Creation
+    B --> P[Notify via Gotify]
+  end
+  
+  subgraph Release Notes Handling
+    Q((PR Webhook Received)) --> R{PR Merged?}
+    R -- No --> S(End)
+    R -- Yes --> T[Hit GitHub API for Release Notes]
+    T --> U[Extract PR Number]
+    U --> V[API Call to Foregjo]
+    V --> W[Leave Release Notes as Comment]
+    W --> S
+  end
+  
+  P --> Q
+
+```
+
 ## To-Do
 
 - [ ] Get all dependencies configured to pull changelogs on PR
