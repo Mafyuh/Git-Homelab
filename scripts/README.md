@@ -9,7 +9,7 @@ Previously used this script for CD, it worked, but I wanted an instant deploymen
 - SSH in to the machine that hosts that docker compose stack running git pull and docker compose up -d 
 - Optional, If there is any error message we sent Gotify a link to the PR and error message
 - Set number from JSON to number in n8n
-- Add that number to URL of API request to Forgejo which we add a review with the logs if no errors.
+- Add that number to URL of API request to Forgejo which we add a review with the logs if no errors. https://git.mafyuh.dev/mafyuh/Auto-Homelab/pulls/222#issuecomment-1799
 
 The only exception is n8n itself. Which for now I will manually update.
 
