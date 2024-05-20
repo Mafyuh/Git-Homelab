@@ -1,5 +1,5 @@
 # Auto-Homelab
-Homelab docker-compose environment defined in code. Using Drone and Renovate bot for CI along with bash scripts for CD. Very much still a WIP.
+Homelab docker-compose environment defined in code. Using Drone and Renovate bot for CI along with n8n automation for CD.
 
 ## Apps in Repo:
 <table>
@@ -211,6 +211,11 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/plausible.svg"></td>
         <td><a href="https://plausible.io/">Plausible</a></td>
         <td>Analytics tracker for certain websites (Blog)</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/wazuh.svg"></td>
+        <td><a href="https://wazuh.com/">wazuh</a></td>
+        <td>Security platform monitoring everything with agents installed on all VM's</td>
     </tr>
 </table>
 
