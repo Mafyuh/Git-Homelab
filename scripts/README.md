@@ -1,3 +1,20 @@
+# n8n Continuous Deployment
+Previously used this script for CD, it worked, but I wanted an instant deployment and not just ran on a schedule. So I created an n8n automation. Here's the breakdown:
+
+## Outline
+
+- Webhook is sent whenever a PR is merged
+- Filters out any new, edited or re-opened PR's
+- Checks the PR title for app name, which is filtered so each SSH session matches based on the IF conditions.
+- SSH in to the machine that hosts that docker compose stack running git pull and docker compose up -d 
+- Optional, If there is any error message we sent Gotify a link to the PR and error message
+- Set number from JSON to number in n8n
+- Add that number to URL of API request to Forgejo which we add a review with the logs if no errors.
+
+The only exception is n8n itself. Which for now I will manually update.
+
+## dccd instructions (no longer used besides ag-backup)
+
 Modified version of https://github.com/loganmarchione/dccd, with Gotify notification on error and allowing to choose which directory is cd'd into before running script. I run this on each docker host through crontab every 30 minutes, just adding the -f flag with the folder which that host represents. So each directory represents a host
 
 Clone this repo:
