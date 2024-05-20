@@ -1,5 +1,21 @@
 # n8n Continuous Deployment
-Previously used this script for CD, it worked, but I wanted an instant deployment and not just ran on a schedule. So I created an n8n automation. Here's the breakdown:
+Previously used this script for CD, it worked, but I wanted an instant deployment and not just ran on a schedule. So I created an n8n automation. Here's the visual breakdown:
+
+```mermaid
+  graph LR
+    A((Webhook Received)) --> B{PR Merged?}
+    B -- No --> C(End)
+    B -- Yes --> D{Extract App Name}
+    D --> E{SSH to Host Machine}
+    E --> F{Git Pull & Docker Compose Up}
+    F --> G{Error?}
+    G -- Yes --> H[Send Gotify Notification]
+    G -- No --> I[Extract PR Number]
+    I --> J[Add PR Number to Forgejo API URL]
+    J --> K[Send Review with Logs]
+    K --> L(End)
+    H --> L
+```
 
 ## Outline
 
