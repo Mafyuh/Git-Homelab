@@ -1,7 +1,27 @@
 [![Build Status](https://drone.mafyuh.dev/api/badges/mafyuh/Auto-Homelab/status.svg)](https://drone.mafyuh.dev/mafyuh/Auto-Homelab)
 [![Pulls](https://git.mafyuh.dev/mafyuh/Auto-Homelab/badges/pulls.svg)](https://git.mafyuh.dev/mafyuh/Auto-Homelab/pulls)
+<div align="center">
+
 # Auto-Homelab
+
 Homelab docker-compose environment defined in code. Using Drone and Renovate bot for CI along with n8n automation for CD.
+
+</div>
+<p align="center">
+  <a href="https://git.mafyuh.dev/mafyuh/Auto-Homelab/wiki/?action=_pages">Wiki</a> | 
+  <a href="https://loganmarchione.com/2022/10/how-to-run-renovate-on-a-self-hosted-gitea-and-drone-instance/">How to Setup</a> |
+  <a href="https://mafyuh.com">Blog</a> 
+</p>
+
+<div align="center">
+
+| Hypervisor | OS | Tools | VPS (arm) | Firewall |
+|---|---|---|---|---|
+| [![Proxmox](https://img.shields.io/badge/-Proxmox-%23c9d1d9?logo=Proxmox)](https://www.proxmox.com) | [![Ubuntu](https://img.shields.io/badge/Ubuntu_22.04-%23c9d1d9?&logo=ubuntu&logoColor=red)](https://releases.ubuntu.com/jammy/) [![Ubuntu](https://img.shields.io/badge/Ubuntu_24-%23c9d1d9?&logo=ubuntu&logoColor=red)](https://releases.ubuntu.com/noble/) | [![Forgejo](https://img.shields.io/badge/-Forgejo-%23c9d1d9?logo=forgejo&logoColor=orange)](https://forgejo.org/) [![Drone](https://img.shields.io/badge/-Drone-%23c9d1d9?logo=drone&logoColor=black)](https://www.drone.io/) [![Docker](https://img.shields.io/badge/-Docker-%23c9d1d9?logo=docker)](https://www.docker.com/) | [![Oracle](https://img.shields.io/badge/-Oracle_Cloud-%23c9d1d9?logo=oracle&logoColor=red)](https://www.oracle.com/cloud/) | [![pfSense](https://img.shields.io/badge/-pfSense-%23c9d1d9?logo=pfsense&logoColor=blue)](https://www.pfsense.org/) | 
+
+</div>
+
+<div align="center">
 
 ## Apps in Repo:
 <table>
@@ -182,6 +202,10 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
     </tr>
 </table>
 
+</div>
+
+<div align="center">
+
 ## Apps not yet in repo:
 <table>
     <tr>
@@ -221,24 +245,7 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
     </tr>
 </table>
 
-### Hypervisor: 
-[![Proxmox](https://img.shields.io/badge/-Proxmox-%23c9d1d9?logo=Proxmox)](https://www.proxmox.com)
-
-### OS:
-[![Ubuntu](https://img.shields.io/badge/Ubuntu_22.04-%23c9d1d9?&logo=ubuntu&logoColor=red)](https://releases.ubuntu.com/jammy/)
-[![Ubuntu](https://img.shields.io/badge/Ubuntu_24-%23c9d1d9?&logo=ubuntu&logoColor=red)](https://releases.ubuntu.com/noble/)
-
-
-### Tools:
-[![Forgejo](https://img.shields.io/badge/-Forgejo-%23c9d1d9?logo=forgejo&logoColor=orange)](https://forgejo.org/)
-[![Drone](https://img.shields.io/badge/-Drone-%23c9d1d9?logo=drone&logoColor=black)](https://www.drone.io/)
-[![Docker](https://img.shields.io/badge/-Docker-%23c9d1d9?logo=docker)](https://www.docker.com/)
-
-### VPS (arm)
-[![Oracle](https://img.shields.io/badge/-Oracle_Cloud-%23c9d1d9?logo=oracle&logoColor=red)](https://www.oracle.com/cloud/)
-
-### Firewall
-[![pfSense](https://img.shields.io/badge/-pfSense-%23c9d1d9?logo=pfsense&logoColor=blue)](https://www.pfsense.org/)
+</div>
 
 ## To-Do
 
