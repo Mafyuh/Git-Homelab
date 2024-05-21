@@ -1,4 +1,4 @@
-[![Build Status](https://drone.mafyuh.dev/api/badges/mafyuh/Auto-Homelab/status.svg)](https://drone.mafyuh.dev/mafyuh/Auto-Homelab)
+[![Build Status](https://drone.mafyuh.dev/api/badges/renovatebot/renovate-config/status.svg)](https://drone.mafyuh.dev/mafyuh/Auto-Homelab)
 [![Pulls](https://git.mafyuh.dev/mafyuh/Auto-Homelab/badges/pulls.svg)](https://git.mafyuh.dev/mafyuh/Auto-Homelab/pulls)
 <div align="center">
 
