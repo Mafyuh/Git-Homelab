@@ -281,10 +281,10 @@ graph TD
   end
   
   subgraph Release Notes Handling
-    Q((PR Webhook Received)) --> R{PR Merged?}
+    Q((PR Webhook Received)) --> R{PR Open?}
     R -- No --> S(End)
     R -- Yes --> T[Hit GitHub API for Release Notes]
-    T --> U[Extract PR Number]
+    T --> U[Extract PR Number from webhook]
     U --> V[API Call to Foregjo]
     V --> W[Leave Release Notes as Comment]
     W --> S
