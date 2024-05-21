@@ -29,6 +29,8 @@ Previously used this script for CD, it worked, but I wanted an instant deploymen
 
 The only exception is n8n itself. Which for now I will manually update.
 
+To import this into your n8n, create a new workflow, top right click 3 dots - Import from URL and paste https://git.mafyuh.dev/mafyuh/Auto-Homelab/raw/branch/main/scripts/CD.json 
+
 ## dccd instructions (no longer used besides ag-backup)
 
 Modified version of https://github.com/loganmarchione/dccd, with Gotify notification on error and allowing to choose which directory is cd'd into before running script. I run this on each docker host through crontab every 30 minutes, just adding the -f flag with the folder which that host represents. So each directory represents a host
