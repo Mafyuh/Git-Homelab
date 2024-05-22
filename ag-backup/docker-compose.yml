@@ -1,7 +1,7 @@
 ---
 services:
   adguardhome:
-    image: docker.mafyuh.xyz/adguard/adguardhome@sha256:4483861963bd1aeb3e6661e4da5b14402c659b43d207cf59fa0962d75ce496cb
+    image: docker.mafyuh.xyz/adguard/adguardhome:v0.107.48
     container_name: adguardhome
     restart: unless-stopped
     volumes:
