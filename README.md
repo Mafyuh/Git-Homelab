@@ -32,11 +32,6 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
         <th>Description</th>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://avatars.githubusercontent.com/u/99494700?s=200&v=4"></td>
-        <td><a href="https://github.com/activepieces/activepieces">ActivePieces</a></td>
-        <td>Selfhosted Zapier/n8n alternative </td>
-    </tr>
-    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/adguardhome.svg"></td>
         <td><a href="https://adguard.com/en/adguard-home/overview.html">AdGuard Home</a></td>
         <td>Network Wide DNS adblock as well as my DNS server (2/2)</td>
