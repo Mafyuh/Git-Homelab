@@ -67,7 +67,7 @@ services:
       - gitea_main
 
   uptime-kuma:
-    image: docker.mafyuh.xyz/louislam/uptime-kuma:1.23.12
+    image: docker.mafyuh.xyz/louislam/uptime-kuma:1.23.13
     container_name: uptime-kuma
     ports:
       - 3001:3001
