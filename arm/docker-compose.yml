@@ -78,7 +78,7 @@ services:
       - gitea_main
 
   jellyseerr:
-    image: docker.mafyuh.xyz/fallenbagel/jellyseerr@sha256:f19b82dae37cd778ff1e805bce958b074aef789ab89e165a2e0d34965cd870bf
+    image: docker.mafyuh.xyz/fallenbagel/jellyseerr:1.8.1
     container_name: jellyseerr
     ports:
       - 5055:5055
