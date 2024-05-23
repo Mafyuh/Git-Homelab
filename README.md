@@ -210,6 +210,11 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
         <th>Description</th>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/ansible-black.svg"></td>
+        <td><a href="https://github.com/ansible/awx">AWX (Ansible Tower)</a></td>
+        <td>Used to easily run Ansible playbooks on all my VM's, installed on Minikube</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/grafana.svg"></td>
         <td><a href="https://hub.docker.com/r/grafana/grafana-oss">Grafana</a></td>
         <td>Monitoring for various services</td>
