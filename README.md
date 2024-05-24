@@ -300,3 +300,4 @@ graph TD
 - [x] CI Passing Badge in README https://git.mafyuh.dev/mafyuh/Auto-Homelab/commit/cb514e2b09ff5fe55502b92815ed34b7bdacfd0c
 - [ ] Add README to each directory
 - [x] Get upstream release notes for linuxserver containers https://git.mafyuh.dev/mafyuh/Auto-Homelab/pulls/207#issuecomment-1697
+- [ ] Harden all VM's to be CIS compliant
