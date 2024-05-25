@@ -113,7 +113,6 @@ services:
       - 5678:5678
     volumes:
       - n8n_data:/home/node/.n8n
-      - /home/mafyuh/Auto-Homelab:/home/mafyuh/Auto-Homelab
     environment:
       - GENERIC_TIMEZONE=America/New_York
       - TZ=America/New_York
@@ -121,6 +120,15 @@ services:
     restart: unless-stopped
     networks:
       - gitea_main
+
+  vaultwarden:
+    image: docker.mafyuh.xyz/vaultwarden/server:1.30.4
+    container_name: vaultwarden
+    ports:
+      - 8989:80
+    volumes:
+      - /home/ubuntu/vw-data/:/data
+    restart: unless-stopped
 
 
 networks:
