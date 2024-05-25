@@ -131,6 +131,9 @@ services:
     environment:
       - DOMAIN=$VWDOMAIN
     restart: unless-stopped
+    networks:
+      gitea_main:
+        ipv4_address: 172.25.0.25
 
 
 networks:
