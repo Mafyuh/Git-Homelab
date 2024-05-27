@@ -187,6 +187,11 @@ Homelab docker-compose environment defined in code. Using Drone and Renovate bot
         <td>Self-hosted Docker registry to help lower Docker pulls</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/syncthing.svg"></td>
+        <td><a href="https://syncthing.net/">Syncthing</a></td>
+        <td>How I backup all config files, following 3-2-1 backup procedure</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://play-lh.googleusercontent.com/GBhNhKgjfy6i6Ucc0hyB-79WmcV7LvKSfGSy8iStFdZSaLioKQp5rPWjqsh2YFRRZsE1"></td>
         <td><a href="https://twingate.com">Twingate Connectors</a></td>
         <td>Main VPN between homelab and cloud VPS's</td>
