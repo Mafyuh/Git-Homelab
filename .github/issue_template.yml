@@ -1,0 +1,33 @@
+name: 'Feature Request'
+about: 'Suggest a new feature for the project'
+title: 'Feature Request: [Summary]'
+labels:
+  - enhancement
+  - 'feature request'
+assignees: '' 
+
+---
+
+## Feature Request
+
+**Please fill out this template with the requested information.**
+
+**Summary**
+A concise description of the feature you'd like to see added.
+
+**Motivation**
+Explain why this feature would be beneficial to the project. What problem does it solve or what value does it bring?
+
+**Detailed Description**
+Provide a detailed explanation of the proposed feature. Include:
+
+* How would this feature be used?
+* What are the expected benefits of this feature?
+* Are there any potential drawbacks or limitations to consider?
+
+**Additional Context**
+Include any relevant information such as:
+
+* Links to external resources (e.g., documentation, articles)
+* Screenshots or mockups to illustrate the feature
+* Use cases and examples of how the feature would be used
