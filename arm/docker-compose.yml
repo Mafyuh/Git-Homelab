@@ -141,8 +141,8 @@ services:
     container_name: syncthing
     hostname: ARM #optional
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=1001
+      - PGID=1001
       - TZ=Etc/UTC
     volumes:
       - /home/ubuntu/syncthing/config:/config
