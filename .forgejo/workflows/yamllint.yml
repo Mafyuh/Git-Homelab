@@ -7,7 +7,7 @@ on:
 jobs:
   lint-python38:
     name: Lint with Python 3.8
-    runs-on: Runner
+    runs-on: docker
     container:
       image: docker.mafyuh.xyz/python:3.8-slim-bullseye
     steps:
@@ -31,7 +31,7 @@ jobs:
 
   lint-python39:
     name: Lint with Python 3.9
-    runs-on: Runner
+    runs-on: docker
     container:
       image: docker.mafyuh.xyz/python:3.9-slim-bullseye
     steps:
@@ -55,7 +55,7 @@ jobs:
 
   lint-python310:
     name: Lint with Python 3.10
-    runs-on: Runner
+    runs-on: docker
     container:
       image: docker.mafyuh.xyz/python:3.10-slim-bullseye
     steps:
