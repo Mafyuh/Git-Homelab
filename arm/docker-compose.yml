@@ -136,6 +136,25 @@ services:
       gitea_main:
         ipv4_address: 172.25.0.25
 
+  syncthing:
+    image: ghcr.io/linuxserver/syncthing@sha256:3a1a983bd5c0cfc685f5421b374bcf175ccb2df86710bfc454bc76a047a8884f
+    container_name: syncthing
+    hostname: ARM #optional
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Etc/UTC
+    volumes:
+      - /home/ubuntu/syncthing/config:/config
+      - /docker/appdata/:/docker/appdata/
+      - /home/ubuntu/:/home/ubuntu/
+    ports:
+      - 8384:8384
+      - 22000:22000/tcp
+      - 22000:22000/udp
+      - 21027:21027/udp
+    restart: unless-stopped
+
 
 networks:
   gitea_main:
