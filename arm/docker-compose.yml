@@ -38,7 +38,7 @@ services:
       - /home/ubuntu/forgejo/mysql:/var/lib/mysql
 
   gotify:
-    image: docker.mafyuh.xyz/gotify/server-arm7@sha256:b1fff7e7940fbf0526c2cff20df7a0f41d4618ea373fa9f812fb335c3ddb0b98
+    image: docker.mafyuh.xyz/gotify/server-arm7:2.4.0
     container_name: gotify
     ports:
       - 9008:80
