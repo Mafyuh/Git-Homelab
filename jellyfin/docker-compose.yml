@@ -32,3 +32,22 @@ services:
     devices:
       - /dev/sr0:/dev/sr0
     privileged: true
+
+  syncthing:
+    image: ghcr.io/linuxserver/syncthing@sha256:3a1a983bd5c0cfc685f5421b374bcf175ccb2df86710bfc454bc76a047a8884f
+    container_name: syncthing
+    hostname: JF
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /docker/appdata/syncthing/config:/config
+      - /docker/appdata/:/docker/appdata/
+      - /home/mafyuh/jellyfin/:/home/mafyuh/jellyfin/
+    ports:
+      - 8384:8384
+      - 22000:22000/tcp
+      - 22000:22000/udp
+      - 21027:21027/udp
+    restart: unless-stopped
