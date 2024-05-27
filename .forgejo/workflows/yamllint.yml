@@ -9,7 +9,7 @@ jobs:
     name: Lint with Python 3.8
     runs-on: docker
     container:
-      image: docker.mafyuh.xyz/python:3.8-slim-bullseye
+      image: docker.mafyuh.xyz/nikolaik/python-nodejs:python3.8-nodejs18-slim
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -33,7 +33,7 @@ jobs:
     name: Lint with Python 3.9
     runs-on: docker
     container:
-      image: docker.mafyuh.xyz/python:3.9-slim-bullseye
+      image: docker.mafyuh.xyz/nikolaik/python-nodejs:python3.9-nodejs18-slim
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -57,7 +57,7 @@ jobs:
     name: Lint with Python 3.10
     runs-on: docker
     container:
-      image: docker.mafyuh.xyz/python:3.10-slim-bullseye
+      image: docker.mafyuh.xyz/nikolaik/python-nodejs:python3.10-nodejs18-slim
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
