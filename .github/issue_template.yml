@@ -3,7 +3,7 @@ about: 'Suggest a new feature for the project'
 title: 'Feature Request: [Summary]'
 labels:
   - enhancement
-  - 'feature request'
+  - feature request
 assignees: '' 
 
 ---
