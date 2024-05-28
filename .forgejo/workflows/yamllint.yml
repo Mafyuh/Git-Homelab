@@ -22,9 +22,8 @@ jobs:
       - name: Show yamllint version
         run: yamllint --version
       - name: Lint .yml files
-        run: find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
-      - name: Lint .yaml files
-        run: find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
+        run: |
+          find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
 
   lint-python39:
     name: Lint with Python 3.9
@@ -43,9 +42,8 @@ jobs:
       - name: Show yamllint version
         run: yamllint --version
       - name: Lint .yml files
-        run: find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
-      - name: Lint .yaml files
-        run: find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
+        run: |
+          find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
 
   lint-python310:
     name: Lint with Python 3.10
@@ -64,6 +62,5 @@ jobs:
       - name: Show yamllint version
         run: yamllint --version
       - name: Lint .yml files
-        run: find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
-      - name: Lint .yaml files
-        run: find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
+        run: |
+          find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
