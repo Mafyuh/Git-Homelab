@@ -13,24 +13,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Set up Python 3.8
-        run: |
-          python3 --version
+        run: python3 --version
       - name: Install yamllint
-        run: |
-          pip3 install yamllint
+        run: pip3 install yamllint
       - name: Show yamllint version
-        run: |
-          yamllint --version
+        run: yamllint --version
       - name: Lint .yml files
-        run: |
-          find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
+        run: find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
       - name: Lint .yaml files
-        run: |
-          find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
+        run: find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
 
   lint-python39:
     name: Lint with Python 3.9
@@ -40,24 +36,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Set up Python 3.9
-        run: |
-          python3 --version
+        run: python3 --version
       - name: Install yamllint
-        run: |
-          pip3 install yamllint
+        run: pip3 install yamllint
       - name: Show yamllint version
-        run: |
-          yamllint --version
+        run: yamllint --version
       - name: Lint .yml files
-        run: |
-          find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
+        run: find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
       - name: Lint .yaml files
-        run: |
-          find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
+        run: find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
 
   lint-python310:
     name: Lint with Python 3.10
@@ -67,21 +59,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Set up Python 3.10
-        run: |
-          python3 --version
+        run: python3 --version
       - name: Install yamllint
-        run: |
-          pip3 install yamllint
+        run: pip3 install yamllint
       - name: Show yamllint version
-        run: |
-          yamllint --version
+        run: yamllint --version
       - name: Lint .yml files
-        run: |
-          find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
+        run: find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
       - name: Lint .yaml files
-        run: |
-          find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
+        run: find . -name "*.yaml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
