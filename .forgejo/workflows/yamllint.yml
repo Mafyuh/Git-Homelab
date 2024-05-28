@@ -5,62 +5,26 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  lint-python38:
-    name: Lint with Python 3.8
+  lint:
+    name: Lint YAML files
     runs-on: docker
-    container:
-      image: docker.mafyuh.xyz/python:3.8-slim-bullseye
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-      - name: Set up Python 3.8
-        run: python3 --version
-      - name: Install yamllint
-        run: pip3 install yamllint
-      - name: Show yamllint version
-        run: yamllint --version
-      - name: Lint .yml files
-        run: |
-          find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
 
-  lint-python39:
-    name: Lint with Python 3.9
-    runs-on: docker
-    container:
-      image: docker.mafyuh.xyz/python:3.9-slim-bullseye
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Set up Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v4
-      - name: Set up Python 3.9
-        run: python3 --version
-      - name: Install yamllint
-        run: pip3 install yamllint
-      - name: Show yamllint version
-        run: yamllint --version
-      - name: Lint .yml files
-        run: |
-          find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
+        with:
+          node-version: 14
 
-  lint-python310:
-    name: Lint with Python 3.10
-    runs-on: docker
-    container:
-      image: docker.mafyuh.xyz/python:3.10-slim-bullseye
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-      - name: Set up Python 3.10
-        run: python3 --version
       - name: Install yamllint
-        run: pip3 install yamllint
+        run: | 
+          npm install -g yamllint
+
       - name: Show yamllint version
-        run: yamllint --version
+        run: | 
+          yamllint --version
+
       - name: Lint .yml files
-        run: |
-          find . -name "*.yml" ! -name ".drone.yml" -exec yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" {} +
+        run: | 
+          yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" ./**/*.yml
