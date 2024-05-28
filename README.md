@@ -4,7 +4,7 @@
 
 # Auto-Homelab
 
-Homelab docker-compose environment defined in code. Using Drone and Renovate bot for CI along with n8n automation for CD.
+Homelab docker-compose environment defined in code. Using Foregjo Actions and Renovate bot for CI along with n8n automation for CD.
 
 </div>
 <p align="center">
