@@ -18,10 +18,13 @@ jobs:
           node-version: 14
 
       - name: Install yamllint
-        run: npm install -g yamllint
+        run: | 
+          npm install -g yamllint
 
       - name: Show yamllint version
-        run: yamllint --version
+        run: | 
+          yamllint --version
 
       - name: Lint .yml files
-        run: yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" ./**/*.yml
+        run: | 
+          yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" ./**/*.yml
