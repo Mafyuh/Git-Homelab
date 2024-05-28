@@ -7,7 +7,7 @@ on:
 jobs:
   lint:
     name: Lint YAML files
-    runs-on: ubuntu-latest
+    runs-on: docker
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
