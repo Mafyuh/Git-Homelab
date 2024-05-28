@@ -1,5 +1,5 @@
 [![Yamllint](https://git.mafyuh.dev/mafyuh/Auto-Homelab/badges/workflows/yamllint.yml/badge.svg)](https://git.mafyuh.dev/mafyuh/Auto-Homelab/actions)
-[![Renovate](https://git.mafyuh.dev/renovatebot/renovate-config/badges/workflows/renovate.yml/badge.svg)](https://git.mafyuh.dev/mafyuh/Auto-Homelab/actions)
+[![Renovate](https://git.mafyuh.dev/renovatebot/renovate-config/badges/workflows/renovate.yml/badge.svg)](https://git.mafyuh.dev/renovatebot/renovate-config/actions)
 [![Pulls](https://git.mafyuh.dev/mafyuh/Auto-Homelab/badges/pulls.svg)](https://git.mafyuh.dev/mafyuh/Auto-Homelab/pulls)
 <div align="center">
 
