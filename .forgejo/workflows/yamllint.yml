@@ -19,7 +19,7 @@ jobs:
 
       - name: Install yamllint
         run: | 
-          npm install -g yamllint
+          npm install -g yaml-lint
 
       - name: Show yamllint version
         run: | 
