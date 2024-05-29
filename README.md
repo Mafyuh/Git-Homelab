@@ -78,6 +78,11 @@ Homelab docker-compose environment defined in code. Using Forgejo Actions and Re
         <td>This site</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/forgejo.svg"></td>
+        <td><a href="https://code.forgejo.org/forgejo/runner">Forgejo Runner</a></td>
+        <td>Runs CI tasks like Yamllint and Renovate, replaced Drone. Hoping to get CD as well</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/gotify.svg"></td>
         <td><a href="https://gotify.net/">Gotfiy</a></td>
         <td>Self hosted notification service</td>
