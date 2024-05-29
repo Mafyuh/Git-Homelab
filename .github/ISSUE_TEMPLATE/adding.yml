@@ -103,4 +103,7 @@ body:
     attributes:
       label: Commit IDs
       description: Enter the commit IDs for the completed steps above
-      placeholder: Enter commit IDs separated by commas
+      value: |
+      Add Configuration Files - 
+      Update Wiki - 
+      Update README(s) - 
