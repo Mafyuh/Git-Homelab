@@ -45,22 +45,22 @@ body:
       label: Folder Added To
       description: Select the folder where the application was added
       options:
-        - label: ag-backup
-        - label: ag-main
-        - label: AI
-        - label: arm
-        - label: arrs
-        - label: authentik
-        - label: cf
-        - label: downloaders
-        - label: drone
-        - label: jellyfin
-        - label: kasm
-        - label: netboot
-        - label: nexus
-        - label: portainer
-        - label: twingate
-        - label: New Folder
+        - 'ag-backup'
+        - 'ag-main'
+        - 'AI'
+        - 'arm'
+        - 'arrs'
+        - 'authentik'
+        - 'cf'
+        - 'downloaders'
+        - 'drone'
+        - 'jellyfin'
+        - 'kasm'
+        - 'netboot'
+        - 'nexus'
+        - 'portainer'
+        - 'twingate'
+        - 'New Folder'
           description: Select this if a new folder was created
 
   - type: input
@@ -92,7 +92,7 @@ body:
         - label: Add to CD Platform Logic
           description: Add necessary logic to the CD platform for the new application
         - label: Testing and Validation
-          description: Ensure the application is tested and validated
+          description: Ensure the application is tested and validated in the environment
 
   - type: textarea
     id: additional-notes
