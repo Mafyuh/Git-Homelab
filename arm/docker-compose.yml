@@ -48,6 +48,8 @@ services:
       - CLOUDFLARE_API_KEY=$CLOUDFLARE_API_KEY
       - DNS_PROVIDER=cloudflare
       - PAGES_DOMAIN=mafyuh.dev
+      - CF_ZONE_API_TOKEN=$CF_ZONE_API_TOKEN
+      - CF_DNS_API_TOKEN=$CF_DNS_API_TOKEN
     ports:
       - "90:80"
       - "449:443"
