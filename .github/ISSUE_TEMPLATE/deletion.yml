@@ -1,0 +1,67 @@
+name: Delete Application
+about: Track the process of deleting an application
+title: "Delete Application: [Application Name]"
+labels: 
+  - deletion
+assignees: []
+
+application_details:
+  application_name: "[Name of the application to be deleted]"
+
+reason_for_deletion:
+  reasons:
+    - no_longer_needed: false
+    - replaced_by_another_application: 
+        selected: false
+        new_application_name: ""
+    - maintenance_overhead: false
+    - security_vulnerabilities: false
+    - performance_issues: false
+    - compatibility_issues: false
+    - licensing_issues: false
+    - other: 
+        selected: false
+        additional_details: ""
+
+impacted_folders:
+  - ag-backup: false
+  - ag-main: false
+  - AI: false
+  - arm: false
+  - arrs: false
+  - authentik: false
+  - cf: false
+  - downloaders: false
+  - drone: false
+  - jellyfin: false
+  - kasm: false
+  - netboot: false
+  - nexus: false
+  - portainer: false
+  - twingate: false
+
+steps_to_delete:
+  - remove_configuration_files: 
+      description: "Locate and remove all configuration files related to the application."
+      completed: false
+  - update_wiki: 
+      description: "Add Archived tag to Wiki page. Update any architecture diagrams or flowcharts."
+      completed: false
+  - update_readmes: 
+      description: "Remove app from main table."
+      completed: false
+  - remove_from_cd_platform_logic: 
+      description: "Remove uneeded if statement from CD platform."
+      completed: false
+  - deletion_from_host: 
+      description: "Ensure that the application and all related files have been successfully removed."
+      completed: false
+  - close_related_issues: 
+      description: "Close any open issues or tasks related to the application."
+      completed: false
+  - delete_entire_folder: 
+      description: "Deleting entire folder"
+      completed: false
+
+additional_notes:
+  comments: ""
