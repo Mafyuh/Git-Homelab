@@ -9,7 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Application Details
+        ## Application Details        
 
   - type: input
     id: application-name
@@ -74,7 +74,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Steps to Add
+        ## Steps to Add        
 
   - type: checkboxes
     id: steps-to-add
@@ -84,14 +84,19 @@ body:
       options:
         - label: Add Configuration Files
           description: Create and add configuration files for the new application
+          commit_id: Input commit ID here
         - label: Update Wiki
           description: Create or update the Wiki page for the new application and update any relevant architecture diagrams or flowcharts
+          commit_id: Input commit ID here
         - label: Update README(s)
           description: Add the new application to the main table and any other relevant sections
+          commit_id: Input commit ID here
         - label: Add to CD Platform Logic
           description: Add necessary logic to the CD platform for the new application
+          commit_id: Input commit ID here
         - label: Testing and Validation
           description: Ensure the application is tested and validated in the environment
+          commit_id: Input commit ID here
 
   - type: textarea
     id: additional-notes
