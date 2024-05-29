@@ -99,11 +99,12 @@ body:
         ## Commit IDs for Completed Steps
 
   - type: textarea
-    id: commit-ids
-    attributes:
-      label: Commit IDs
-      description: Enter the commit IDs for the completed steps above
-      value: |
-      Add Configuration Files - 
-      Update Wiki - 
-      Update README(s) - 
+  id: commit-ids
+  attributes:
+    label: Commit IDs
+    description: Enter the commit IDs for the completed steps above
+    value: |
+      Add Configuration Files -
+      Update Wiki -
+      Update README(s) -
+
