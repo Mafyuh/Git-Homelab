@@ -84,23 +84,23 @@ body:
       options:
         - label: Add Configuration Files
           description: Create and add configuration files for the new application
-          commit_id: Input commit ID here
         - label: Update Wiki
           description: Create or update the Wiki page for the new application and update any relevant architecture diagrams or flowcharts
-          commit_id: Input commit ID here
         - label: Update README(s)
           description: Add the new application to the main table and any other relevant sections
-          commit_id: Input commit ID here
         - label: Add to CD Platform Logic
           description: Add necessary logic to the CD platform for the new application
-          commit_id: Input commit ID here
         - label: Testing and Validation
           description: Ensure the application is tested and validated in the environment
-          commit_id: Input commit ID here
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Commit IDs for Completed Steps
 
   - type: textarea
-    id: additional-notes
+    id: commit-ids
     attributes:
-      label: Additional Notes
-      description: Add any additional comments or details here
-      placeholder: Comments
+      label: Commit IDs
+      description: Enter the commit IDs for the completed steps above
+      placeholder: Enter commit IDs separated by commas
