@@ -15,7 +15,7 @@ services:
       - PGID=1000
 
   lidarr:
-    image: ghcr.io/linuxserver/lidarr@sha256:20a47bd84783975ad7aa322eee439dee6a097c56d61c28e0f874ea7d87e07793
+    image: ghcr.io/linuxserver/lidarr@sha256:a3926ea3f7d75c6c09de4e8b7588756664a492a69763cfbd05b83e54d73af2e3
     container_name: lidarr
     ports:
       - "8686:8686"
