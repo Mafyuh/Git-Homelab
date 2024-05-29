@@ -43,8 +43,8 @@ services:
       - GITEA_ROOT=https://git.mafyuh.dev
       - GITEA_API_TOKEN=$GITEA_API_TOKEN
     ports:
-      - "80:80"
-      - "443:443"
+      - "90:80"
+      - "449:443"
     volumes:
       - /home/ubuntu/pages/data:/data
 
