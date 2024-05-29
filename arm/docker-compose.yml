@@ -50,6 +50,7 @@ services:
       - PAGES_DOMAIN=mafyuh.dev
       - CF_ZONE_API_TOKEN=$CF_ZONE_API_TOKEN
       - CF_DNS_API_TOKEN=$CF_DNS_API_TOKEN
+      - ENABLE_HTTP_SERVER=true
     ports:
       - "90:80"
       - "449:443"
