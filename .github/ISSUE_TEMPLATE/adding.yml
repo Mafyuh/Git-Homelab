@@ -61,7 +61,6 @@ body:
         - portainer
         - twingate
         - New Folder
-          description: Select this if a new folder was created
 
   - type: input
     id: new-folder-name
