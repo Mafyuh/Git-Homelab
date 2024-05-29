@@ -43,7 +43,10 @@ services:
     environment:
       - GITEA_ROOT=https://git.mafyuh.dev
       - GITEA_API_TOKEN=$GITEA_API_TOKEN
-      - NO_DNS_01=true
+      - ACME_ACCEPT_TERMS=true
+      - CLOUDFLARE_EMAIL=$CLOUDFLARE_EMAIL
+      - CLOUDFLARE_API_KEY=$CLOUDFLARE_API_KEY
+      - DNS_PROVIDER=cloudflare
     ports:
       - "90:80"
       - "449:443"
