@@ -37,6 +37,17 @@ services:
     volumes:
       - /home/ubuntu/forgejo/mysql:/var/lib/mysql
 
+  pages:
+    image: codeberg.org/codeberg/pages-server@sha256:0d43114de80e61c9d841efeb3af95e4f4d79c89661d483a55013f5b65a682d47
+    environment:
+      - GITEA_ROOT=https://git.mafyuh.dev
+      - GITEA_API_TOKEN=$GITEA_API_TOKEN
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /home/ubuntu/pages/data:/data
+
   gotify:
     image: docker.mafyuh.xyz/gotify/server-arm7:2.4.0
     container_name: gotify
