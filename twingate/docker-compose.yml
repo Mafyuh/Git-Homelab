@@ -35,4 +35,4 @@ services:
       - /home/mafyuh/data:/data
     restart: 'unless-stopped'
 
-    command: '/bin/sh -c "while : ; do sleep 1 ; done ;"'
+    command: '/bin/sh -c "sleep 5; forgejo-runner daemon"'
