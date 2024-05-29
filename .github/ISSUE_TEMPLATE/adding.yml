@@ -9,7 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Application Details        
+        ## Application Details                
 
   - type: input
     id: application-name
@@ -74,7 +74,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Steps to Add        
+        ## Steps to Add                
 
   - type: checkboxes
     id: steps-to-add
@@ -96,14 +96,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Commit IDs for Completed Steps
+        ## Commit IDs for Completed Steps        
 
   - type: textarea
-  id: commit-ids
-  attributes:
-    label: Commit IDs
-    description: Enter the commit IDs for the completed steps above
-    value: |
-      - Add Configuration Files
-      - Update Wiki
-      - Update README(s)
+    id: commit-ids
+    attributes:
+      label: Commit IDs
+      description: Enter the commit IDs for the completed steps above
+      placeholder: Enter commit IDs separated by commas
