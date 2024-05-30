@@ -38,7 +38,7 @@ services:
       - /home/ubuntu/forgejo/mysql:/var/lib/mysql
 
   pages:
-    image: codeberg.org/codeberg/pages-server@sha256:0d43114de80e61c9d841efeb3af95e4f4d79c89661d483a55013f5b65a682d47
+    image: codeberg.org/codeberg/pages-server@sha256:7911833f0b826a3586a02f4e21e9768dcd3e72a6b0ec3d998b2ceb328876c0f6
     container_name: codeberg-pages
     environment:
       - GITEA_ROOT=https://git.mafyuh.dev
