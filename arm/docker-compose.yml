@@ -37,29 +37,6 @@ services:
     volumes:
       - /home/ubuntu/forgejo/mysql:/var/lib/mysql
 
-  pages:
-    image: codeberg.org/codeberg/pages-server@sha256:7911833f0b826a3586a02f4e21e9768dcd3e72a6b0ec3d998b2ceb328876c0f6
-    container_name: codeberg-pages
-    environment:
-      - GITEA_ROOT=https://git.mafyuh.dev
-      - GITEA_API_TOKEN=$GITEA_API_TOKEN
-      - ACME_ACCEPT_TERMS=true
-      - CLOUDFLARE_EMAIL=$CLOUDFLARE_EMAIL
-      - CLOUDFLARE_API_KEY=$CLOUDFLARE_API_KEY
-      - DNS_PROVIDER=cloudflare
-      - PAGES_DOMAIN=pages.mafyuh.dev
-      - CF_ZONE_API_TOKEN=$CF_ZONE_API_TOKEN
-      - CF_DNS_API_TOKEN=$CF_DNS_API_TOKEN
-      - ENABLE_HTTP_SERVER=true
-    ports:
-      - "90:80"
-      - "449:443"
-    volumes:
-      - /home/ubuntu/pages/data:/data
-    networks:
-      gitea_main:
-        ipv4_address: 172.25.0.27
-
   gotify:
     image: docker.mafyuh.xyz/gotify/server-arm7:2.4.0
     container_name: gotify
