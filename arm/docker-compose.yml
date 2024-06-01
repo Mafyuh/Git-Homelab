@@ -47,7 +47,7 @@ services:
       - CLOUDFLARE_EMAIL=$CLOUDFLARE_EMAIL
       - CLOUDFLARE_API_KEY=$CLOUDFLARE_API_KEY
       - DNS_PROVIDER=cloudflare
-      - PAGES_DOMAIN=mafyuh.dev
+      - PAGES_DOMAIN=pages.mafyuh.dev
       - CF_ZONE_API_TOKEN=$CF_ZONE_API_TOKEN
       - CF_DNS_API_TOKEN=$CF_DNS_API_TOKEN
       - ENABLE_HTTP_SERVER=true
