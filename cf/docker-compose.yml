@@ -1,5 +1,6 @@
 ---
 services:
   cf-tunnel:
+    restart: unless-stopped
     image: docker.mafyuh.xyz/cloudflare/cloudflared@sha256:a3ba3f799551b9d9e5f15eba4b3025599a90c6f8aa1583003218e1c288c41c6a
     command: tunnel --no-autoupdate run --token $CF_TOKEN
