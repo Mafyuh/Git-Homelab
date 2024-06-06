@@ -1,7 +1,7 @@
 ---
 services:
   jellyfin:
-    image: ghcr.io/linuxserver/jellyfin@sha256:54a3fc48881dd4f64648a95ce60534a0007933d8d24b6203c359d643f89484e9
+    image: ghcr.io/linuxserver/jellyfin@sha256:a363aa018edee61bcee46be5f8dbd0db2a317b2bc0f95121a46e522d798c2a63
     container_name: jellyfin
     devices:
       - /dev/dri/renderD129:/dev/dri/renderD129
@@ -34,7 +34,7 @@ services:
     privileged: true
 
   syncthing:
-    image: ghcr.io/linuxserver/syncthing@sha256:91c2b670998d9aeb10b3bd07d5c9603c02169dc14359b1931f6dbbcb63650f69
+    image: ghcr.io/linuxserver/syncthing@sha256:71db49de13f2d0a963fa43c10427972ace94135525d7072c94c63d846f57a7e6
     container_name: syncthing
     hostname: JF
     environment:
