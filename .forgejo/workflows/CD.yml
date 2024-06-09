@@ -14,7 +14,11 @@ jobs:
       - name: Detect modified folders
         id: detect-changes
         run: |
-          folders=$(git diff-tree --no-commit-id --name-only -r HEAD^..HEAD | cut -d/ -f1 | sort | uniq)
+          if git rev-parse --verify HEAD^ >/dev/null 2>&1; then
+            folders=$(git diff-tree --no-commit-id --name-only -r HEAD^..HEAD | cut -d/ -f1 | sort | uniq)
+          else
+            folders=$(git diff-tree --no-commit-id --name-only -r origin/main..HEAD | cut -d/ -f1 | sort | uniq)
+          fi
           echo "Modified folders: $folders"
           echo "::set-output name=folders::$folders"
 
