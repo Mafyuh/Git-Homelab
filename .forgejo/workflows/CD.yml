@@ -13,7 +13,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configure SSH Key
-        run: echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
 
       - name: Deploy to Hosts
         run: |
