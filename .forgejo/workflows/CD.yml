@@ -1,13 +1,12 @@
-name: Continuous Deployment
-
+name: Deploy to Hosts
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [closed]
 
 jobs:
   deploy:
     runs-on: docker
+    if: github.event.pull_request.merged == true
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,10 +19,9 @@ jobs:
 
       - name: Deploy to Hosts
         run: |
-          for folder in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | cut -d/ -f1 | sort | uniq)
+          for folder in $(git diff-tree --no-commit-id --name-only -r "${{ github.event.pull_request.merge_commit_sha }}" | cut -d/ -f1 | sort | uniq)
           do
             echo "Deploying to $folder"
-            ./scripts/deploy.sh $folder
+            ./scripts/deploy.sh "$folder"
+            echo "Deployment for $folder completed successfully"
           done
-
-          echo "Deployment for $folder completed successfully"
