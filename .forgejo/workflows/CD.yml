@@ -1,0 +1,35 @@
+name: Deploy to Hosts
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  deploy:
+    if: github.event.pull_request.merged == true
+    runs-on: docker
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Detect modified folders
+        id: detect-changes
+        run: |
+          folders=$(git diff-tree --no-commit-id --name-only -r "${{ github.event.pull_request.merge_commit_sha }}" | cut -d/ -f1 | sort | uniq)
+          echo "Modified folders: $folders"
+          echo "::set-output name=folders::$folders"
+
+      - name: Determine target host
+        id: determine-host
+        run: |
+          folder=$(echo "${{ steps.detect-changes.outputs.folders }}" | head -n 1)
+          case $folder in
+            arrs)
+              echo "::set-output name=target_host::${{ secrets.ARRS_IP }}"
+              ;;
+            ag_main)
+              echo "::set-output name=target_host::${{ secrets.AGMAIN_IP }}"
+              ;;
+            downloaders)
+              echo "::set-output name=target_host::${{ secrets.DOWNLOADERS_IP }}"
+              ;;
+            # Add cases for other folders/
