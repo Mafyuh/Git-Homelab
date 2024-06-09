@@ -11,30 +11,36 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Fetch all history for git diff
+        run: git fetch --depth=2
+
       - name: Detect modified folders
         id: detect-changes
         run: |
-          if git rev-parse --verify HEAD^ >/dev/null 2>&1; then
-            folders=$(git diff-tree --no-commit-id --name-only -r HEAD^..HEAD | cut -d/ -f1 | sort | uniq)
-          else
-            folders=$(git diff-tree --no-commit-id --name-only -r origin/main..HEAD | cut -d/ -f1 | sort | uniq)
+          if [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
+            git fetch --unshallow
           fi
+          folders=$(git diff --name-only HEAD~1 HEAD | cut -d/ -f1 | sort | uniq)
           echo "Modified folders: $folders"
           echo "::set-output name=folders::$folders"
 
       - name: Determine target host
         id: determine-host
         run: |
-          folder=${{ steps.detect-changes.outputs.folders }}
+          folder=$(echo "${{ steps.detect-changes.outputs.folders }}" | head -n 1)
+          if [ -z "$folder" ]; then
+            echo "No modified folders detected"
+            exit 1
+          fi
           case $folder in
             arrs)
-              echo "::set-output name=target_host::${{ secrets.ARRS_IP }}"
+              target_host=${{ secrets.ARRS_IP }}
               ;;
             ag_main)
-              echo "::set-output name=target_host::${{ secrets.AGMAIN_IP }}"
+              target_host=${{ secrets.AGMAIN_IP }}
               ;;
             downloaders)
-              echo "::set-output name=target_host::${{ secrets.DOWNLOADERS_IP }}"
+              target_host=${{ secrets.DOWNLOADERS_IP }}
               ;;
             # Add cases for other folders/hosts
             *)
@@ -42,6 +48,7 @@ jobs:
               exit 1
               ;;
           esac
+          echo "::set-output name=target_host::$target_host"
           echo "::set-output name=folder::$folder"
 
       - name: Trigger AWX Job
@@ -49,10 +56,5 @@ jobs:
           curl -X POST \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" \
-            -d '{
-                  "extra_vars": {
-                    "target_host": "${{ steps.determine-host.outputs.target_host }}",
-                    "folder": "${{ steps.determine-host.outputs.folder }}"
-                  }
-                }' \
-            "https://awx.mafyuh.xyz/api/v2/job_templates/13/github/"
+            -d "{\"extra_vars\": {\"target_host\": \"${{ steps.determine-host.outputs.target_host }}\", \"folder\": \"${{ steps.determine-host.outputs.folder }}\"}}" \
+            "http://awx.example.com/api/v2/job_templates/YOUR_JOB_TEMPLATE_ID/launch/"
