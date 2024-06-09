@@ -69,11 +69,6 @@ Homelab docker-compose environment defined in code. Using Forgejo Actions and Re
         <td>Allows my users to request content through Discord if they choose</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/droneci.svg"></td>
-        <td><a href="https://www.drone.io/">Drone</a></td>
-        <td>Selfhosted CI/CD pipeline manager</td>
-    </tr>
-    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/FlareSolverr/FlareSolverr/master/resources/flaresolverr_logo.svg"></td>
         <td><a href="https://github.com/FlareSolverr/FlareSolverr">FlareSolverr</a></td>
         <td>Proxy server to bypass Cloudflare and DDoS-GUARD protection</td>
