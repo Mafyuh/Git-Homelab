@@ -14,7 +14,7 @@ jobs:
       - name: Detect modified folders
         id: detect-changes
         run: |
-          folders=$(git diff-tree --no-commit-id --name-only -r "${{ github.event.pull_request.merge_commit_sha }}" | cut -d/ -f1 | sort | uniq)
+          folders=$(git diff-tree --no-commit-id --name-only -r HEAD^..HEAD | cut -d/ -f1 | sort | uniq)
           echo "Modified folders: $folders"
           echo "::set-output name=folders::$folders"
 
