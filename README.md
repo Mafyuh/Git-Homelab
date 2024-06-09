@@ -13,14 +13,15 @@ Homelab docker-compose environment defined in code. Using Forgejo Actions and Re
   <a href="https://git.mafyuh.dev/mafyuh/Auto-Homelab/wiki">Wiki</a> | 
   <a href="https://loganmarchione.com/2022/10/how-to-run-renovate-on-a-self-hosted-gitea-and-drone-instance/">How to Setup</a> |
   <a href="https://mafyuh.com">Blog</a> |
-  <a href="https://www.youtube.com/watch?v=5CkCr9U_Q1Y">Inspiration</a>
+  <a href="https://www.youtube.com/watch?v=5CkCr9U_Q1Y">Inspiration</a> |
+  <a href="https://git.mafyuh.dev/mafyuh/IaC-Homelab">Infrastructure</a>
 </p>
 
 <div align="center">
 
 | Hypervisor | OS | Tools | VPS (arm) | Firewall |
 |---|---|---|---|---|
-| [![Proxmox](https://img.shields.io/badge/-Proxmox-%23c9d1d9?logo=Proxmox)](https://www.proxmox.com) | [![Ubuntu](https://img.shields.io/badge/Ubuntu_22.04-%23c9d1d9?&logo=ubuntu&logoColor=red)](https://releases.ubuntu.com/jammy/) [![Ubuntu](https://img.shields.io/badge/Ubuntu_24-%23c9d1d9?&logo=ubuntu&logoColor=red)](https://releases.ubuntu.com/noble/) | [![Forgejo](https://img.shields.io/badge/-Forgejo-%23c9d1d9?logo=forgejo&logoColor=orange)](https://forgejo.org/) [![Drone](https://img.shields.io/badge/-Drone-%23c9d1d9?logo=drone&logoColor=black)](https://www.drone.io/) [![Docker](https://img.shields.io/badge/-Docker-%23c9d1d9?logo=docker)](https://www.docker.com/) | [![Oracle](https://img.shields.io/badge/-Oracle_Cloud-%23c9d1d9?logo=oracle&logoColor=red)](https://www.oracle.com/cloud/) | [![pfSense](https://img.shields.io/badge/-pfSense-%23c9d1d9?logo=pfsense&logoColor=blue)](https://www.pfsense.org/) | 
+| [![Proxmox](https://img.shields.io/badge/-Proxmox-%23c9d1d9?logo=Proxmox)](https://www.proxmox.com) | [![Ubuntu](https://img.shields.io/badge/Ubuntu_22.04-%23c9d1d9?&logo=ubuntu&logoColor=red)](https://releases.ubuntu.com/jammy/) [![Ubuntu](https://img.shields.io/badge/Ubuntu_24-%23c9d1d9?&logo=ubuntu&logoColor=red)](https://releases.ubuntu.com/noble/) | [![Forgejo](https://img.shields.io/badge/-Forgejo-%23c9d1d9?logo=forgejo&logoColor=orange)](https://forgejo.org/) [![Docker](https://img.shields.io/badge/-Docker-%23c9d1d9?logo=docker)](https://www.docker.com/) | [![Oracle](https://img.shields.io/badge/-Oracle_Cloud-%23c9d1d9?logo=oracle&logoColor=red)](https://www.oracle.com/cloud/) | [![pfSense](https://img.shields.io/badge/-pfSense-%23c9d1d9?logo=pfsense&logoColor=blue)](https://www.pfsense.org/) | 
 
 </div>
 
@@ -207,6 +208,11 @@ Homelab docker-compose environment defined in code. Using Forgejo Actions and Re
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/uptimekuma.svg"></td>
         <td><a href="https://github.com/louislam/uptime-kuma">Uptime Kuma</a></td>
         <td>Self hosted service uptime tracker</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/openai-black.svg"></td>
+        <td><a href="https://github.com/ahmetoner/whisper-asr-webservice">Whisper</a></td>
+        <td>AI Model that I use to generate subtitles for Bazarr when they can't be found</td>
     </tr>
 </table>
 

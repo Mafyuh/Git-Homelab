@@ -53,13 +53,14 @@ body:
         - authentik
         - cf
         - downloaders
-        - drone
         - jellyfin
         - kasm
         - netboot
         - nexus
+        - pages
         - portainer
         - twingate
+        - whisper
         - New Folder
 
   - type: input

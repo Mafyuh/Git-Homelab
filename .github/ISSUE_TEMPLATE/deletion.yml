@@ -49,13 +49,14 @@ body:
         - label: authentik
         - label: cf
         - label: downloaders
-        - label: drone
         - label: jellyfin
         - label: kasm
         - label: netboot
         - label: nexus
+        - label: pages
         - label: portainer
         - label: twingate
+        - label: whisper
 
   - type: markdown
     attributes:
