@@ -25,3 +25,5 @@ jobs:
             echo "Deploying to $folder"
             ./scripts/deploy.sh $folder
           done
+
+          echo "Deployment script completed successfully"
