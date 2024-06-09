@@ -9,7 +9,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/bazarr:/config
       - /data/media:/data/media
-    restart: unless-stopped
+    restart: always
     environment:
       - PUID=1000
       - PGID=1000
