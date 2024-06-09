@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: docker
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
