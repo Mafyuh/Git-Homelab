@@ -57,4 +57,4 @@ jobs:
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" \
             -d "{\"extra_vars\": {\"target_host\": \"${{ steps.determine-host.outputs.target_host }}\", \"folder\": \"${{ steps.determine-host.outputs.folder }}\"}}" \
-            "http://awx.example.com/api/v2/job_templates/YOUR_JOB_TEMPLATE_ID/launch/"
+            "https://awx.mafyuh.xyz/api/v2/job_templates/13/github/"
