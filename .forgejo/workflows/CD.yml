@@ -34,7 +34,7 @@ jobs:
           fi
           case $folder in
             arrs)
-              target_host=${{ secrets.ARRS_IP }}
+              target_host="arrs.lan"
               ;;
             ag_main)
               target_host=${{ secrets.AGMAIN_IP }}
