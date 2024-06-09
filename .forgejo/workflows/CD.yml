@@ -53,14 +53,10 @@ jobs:
 
       - name: Trigger AWX Job
         run: |
-          curl -X POST \
-            -H "Content-Type: application/json" \
+          TARGET_HOST="${{ steps.determine-host.outputs.target_host }}"
+          FOLDER="${{ steps.determine-host.outputs.folder }}"
+          echo "Triggering AWX Job with target host: $TARGET_HOST and folder: $FOLDER"
+          curl -X POST -k -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" \
-            -d '{
-                  "extra_vars": {
-                    "target_host": "'"${{ steps.determine-host.outputs.target_host }}"'",
-                    "folder": "'"${{ steps.determine-host.outputs.folder }}"'"
-                  }
-                }' \
-            "https://awx.mafyuh.xyz/api/v2/job_templates/13/launch/" \
-            -v
+            -d "{\"extra_vars\": {\"target_host\": \"$TARGET_HOST\", \"folder\": \"$FOLDER\"}}" \
+            "https://awx.mafyuh.xyz/api/v2/job_templates/13/launch/"
