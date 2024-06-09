@@ -140,7 +140,7 @@ services:
     image: gcr.io/cadvisor/cadvisor:v0.49.1
 
   syncthing:
-    image: ghcr.io/linuxserver/syncthing@sha256:3a1a983bd5c0cfc685f5421b374bcf175ccb2df86710bfc454bc76a047a8884f
+    image: ghcr.io/linuxserver/syncthing@sha256:71db49de13f2d0a963fa43c10427972ace94135525d7072c94c63d846f57a7e6
     container_name: syncthing
     hostname: ARRS
     environment:

@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
 
   arch-qbittorrentvpn:
-    image: docker.mafyuh.xyz/binhex/arch-qbittorrentvpn:4.6.4-1-03
+    image: docker.mafyuh.xyz/binhex/arch-qbittorrentvpn:4.6.5-1-03
     container_name: qbittorrentvpn
     volumes:
       - '/docker/appdata/qbitty:/config'
@@ -32,7 +32,7 @@ services:
       - VPN_USER=mafyuh+pmp
       - VPN_PASS=
       - STRICT_PORT_FORWARD=yes
-      - LAN_NETWORK=10.0.0.0/24
+      - LAN_NETWORK=10.0.0.0/24,10.69.69.0/24
       - ENABLE_PRIVOXY=yes
       - PUID=1000
       - PGID=1000

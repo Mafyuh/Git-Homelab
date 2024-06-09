@@ -1,5 +1,5 @@
 ## VM
-Self hosted on Proxmox Node 1. Full *arr suite.
+Self hosted on Proxmox Node 1. Full *arr suite
 ## Specs
 - 4 core host
 - 6GB RAM
