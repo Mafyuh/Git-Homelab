@@ -6,7 +6,7 @@ on:
 jobs:
   deploy:
     if: github.event.pull_request.merged == true
-    runs-on: docker
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
       - name: Determine target host
         id: determine-host
         run: |
-          folder=$(echo "${{ steps.detect-changes.outputs.folders }}" | head -n 1)
+          folder=${{ steps.detect-changes.outputs.folders }}
           case $folder in
             arrs)
               echo "::set-output name=target_host::${{ secrets.ARRS_IP }}"
@@ -32,4 +32,23 @@ jobs:
             downloaders)
               echo "::set-output name=target_host::${{ secrets.DOWNLOADERS_IP }}"
               ;;
-            # Add cases for other folders/
+            # Add cases for other folders/hosts
+            *)
+              echo "Unknown folder: $folder"
+              exit 1
+              ;;
+          esac
+          echo "::set-output name=folder::$folder"
+
+      - name: Trigger AWX Job
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" \
+            -d '{
+                  "extra_vars": {
+                    "target_host": "${{ steps.determine-host.outputs.target_host }}",
+                    "folder": "${{ steps.determine-host.outputs.folder }}"
+                  }
+                }' \
+            "https://awx.mafyuh.xyz/api/v2/job_templates/13/github/"
