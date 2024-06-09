@@ -56,5 +56,11 @@ jobs:
           curl -X POST \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" \
-            -d "{\"extra_vars\": {\"target_host\": \"${{ steps.determine-host.outputs.target_host }}\", \"folder\": \"${{ steps.determine-host.outputs.folder }}\"}}" \
-            "https://awx.mafyuh.xyz/api/v2/job_templates/13/launch/"
+            -d '{
+                  "extra_vars": {
+                    "target_host": "'"${{ steps.determine-host.outputs.target_host }}"'",
+                    "folder": "'"${{ steps.determine-host.outputs.folder }}"'"
+                  }
+                }' \
+            "https://awx.mafyuh.xyz/api/v2/job_templates/13/launch/" \
+            -v
