@@ -48,8 +48,5 @@ jobs:
             esac
 
             echo "Deploying to $host for folder $folder"
-            ssh -o StrictHostKeyChecking=no mafyuh@$host << 'EOF'
-              cd /Auto-Homelab/$folder
-              git pull
-              docker-compose up -d          
-EOF
+            ssh -o StrictHostKeyChecking=no mafyuh@$host "cd /Auto-Homelab/$folder && git pull && docker-compose up -d"
+          done
