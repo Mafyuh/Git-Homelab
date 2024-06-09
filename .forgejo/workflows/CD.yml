@@ -23,7 +23,7 @@ jobs:
           # List all modified files and filter unique folder names
           folders=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | cut -d/ -f1 | sort | uniq)
           echo "Modified folders: $folders"
-          echo "::set-output name=folders::$folders"
+          echo "::set-output name=folders::$folders"          
 
       - name: Deploy to Hosts
         if: steps.detect-changes.outputs.folders != ''
@@ -48,9 +48,9 @@ jobs:
             esac
 
             echo "Deploying to $host for folder $folder"
-            ssh -o StrictHostKeyChecking=no mafyuh@$host << EOF
+            ssh -o StrictHostKeyChecking=no mafyuh@$host << 'EOF'
               cd /Auto-Homelab/$folder
               git pull
-              docker-compose up -d
+              docker-compose up -d          
 EOF
           done
