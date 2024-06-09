@@ -7,28 +7,17 @@ on:
 
 jobs:
   deploy:
-    runs-on: docker
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up SSH agent
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Detect modified folders
-        id: detect-changes
-        run: |
-          # List all modified files and filter unique folder names
-          folders=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | cut -d/ -f1 | sort | uniq)
-          echo "Modified folders: $folders"
-          echo "::set-output name=folders::$folders"          
+      - name: Configure SSH Key
+        run: echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
 
       - name: Deploy to Hosts
-        if: steps.detect-changes.outputs.folders != ''
         run: |
-          for folder in ${{ steps.detect-changes.outputs.folders }}
+          for folder in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | cut -d/ -f1 | sort | uniq)
           do
             case $folder in
               arrs)
