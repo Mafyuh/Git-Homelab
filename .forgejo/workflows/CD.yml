@@ -22,23 +22,6 @@ jobs:
         run: |
           for folder in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | cut -d/ -f1 | sort | uniq)
           do
-            case $folder in
-              arrs)
-                host="${{ secrets.ARRS_IP }}"
-                ;;
-              ag_main)
-                host="${{ secrets.AGMAIN_IP }}"
-                ;;
-              downloaders)
-                host="${{ secrets.DOWNLOADERS_IP }}"
-                ;;
-              # Add cases for other folders/hosts
-              *)
-                echo "Unknown folder: $folder"
-                continue
-                ;;
-            esac
-
-            echo "Deploying to $host for folder $folder"
-            ssh -o StrictHostKeyChecking=no mafyuh@$host "cd /Auto-Homelab/$folder && git pull && docker-compose up -d"
+            echo "Deploying to $folder"
+            ./scripts/deploy.sh $folder
           done
