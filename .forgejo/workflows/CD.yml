@@ -42,6 +42,9 @@ jobs:
             downloaders)
               target_host=${{ secrets.DOWNLOADERS_IP }}
               ;;
+            AI)
+              target_host="ai.lan"
+              ;;
             # Add cases for other folders/hosts
             *)
               echo "Unknown folder: $folder"
