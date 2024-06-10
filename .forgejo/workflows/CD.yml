@@ -94,8 +94,8 @@ jobs:
             -d "{\"extra_vars\": {\"target_host\": \"$TARGET_HOST\", \"folder\": \"$FOLDER\"}}" \
             "https://awx.mafyuh.xyz/api/v2/job_templates/13/launch/"
 
-      - name: Delay for 2 minutes
-        run: sleep 120  # 120 seconds = 2 minutes
+      - name: Delay for 45 seconds
+        run: sleep 45 
 
       - name: Fetch AWX Job Logs
         run: |
