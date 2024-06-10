@@ -36,14 +36,44 @@ jobs:
             arrs)
               target_host="arrs.lan"
               ;;
-            ag_main)
-              target_host=${{ secrets.AGMAIN_IP }}
+            arm)
+              target_host="arm.lan"
               ;;
             downloaders)
-              target_host=${{ secrets.DOWNLOADERS_IP }}
+              target_host="downloaders.lan"
               ;;
             AI)
               target_host="ai.lan"
+              ;;
+            authentik)
+              target_host="auth.lan"
+              ;;
+            cf)
+              target_host="cf.lan"
+              ;;
+            jellyfin)
+              target_host="jf.lan"
+              ;;
+            kasm)
+              target_host="kasm.lan"
+              ;;
+            netboot)
+              target_host="netboot.lan"
+              ;;
+            nexus)
+              target_host="nexus.lan"
+              ;;
+            pages)
+              target_host="pages.lan"
+              ;;
+            portainer)
+              target_host="port.lan"
+              ;;
+            twingate)
+              target_host="twingate.lan"
+              ;;
+            whisper)
+              target_host="whisper.lan"
               ;;
             # Add cases for other folders/hosts
             *)
