@@ -1,4 +1,5 @@
 [![Yamllint](https://git.mafyuh.dev/mafyuh/Auto-Homelab/badges/workflows/yamllint.yml/badge.svg)](https://git.mafyuh.dev/mafyuh/Auto-Homelab/actions)
+[![Yamllint](https://git.mafyuh.dev/mafyuh/Auto-Homelab/badges/workflows/CD.yml/badge.svg)](https://git.mafyuh.dev/mafyuh/Auto-Homelab/actions)
 [![Renovate](https://git.mafyuh.dev/renovatebot/renovate-config/badges/workflows/renovate.yml/badge.svg)](https://git.mafyuh.dev/renovatebot/renovate-config/actions)
 [![Pulls](https://git.mafyuh.dev/mafyuh/Auto-Homelab/badges/pulls.svg)](https://git.mafyuh.dev/mafyuh/Auto-Homelab/pulls)
 ![Header Image](https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/header_.png)
@@ -6,7 +7,7 @@
 
 # Auto-Homelab
 
-Homelab docker-compose environment defined in code. Using Forgejo Actions and Renovate bot for CI along with n8n automation for CD.
+Homelab docker-compose environment defined in code. Using Forgejo Actions and Renovate bot for CI, AWX Tower and Forgejo Actions for CD. This is how I keep my Homelab UTD
 
 </div>
 <p align="center">
