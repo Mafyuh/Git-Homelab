@@ -60,3 +60,14 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" \
             -d "{\"extra_vars\": {\"target_host\": \"$TARGET_HOST\", \"folder\": \"$FOLDER\"}}" \
             "https://awx.mafyuh.xyz/api/v2/job_templates/13/launch/"
+
+      - name: Delay for 2 minutes
+        run: sleep 120  # 120 seconds = 2 minutes
+
+      - name: Fetch AWX Job Logs
+        run: |
+          # Fetch the most recent job from AWX
+          job_id=$(curl -s -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" https://awx.mafyuh.xyz/api/v2/job_templates/13/jobs?order_by=-id | jq -r '.results[0].id')
+
+          # Fetch the logs for the job
+          curl -s -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" https://awx.mafyuh.xyz/api/v2/jobs/$job_id/stdout/
