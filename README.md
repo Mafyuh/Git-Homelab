@@ -148,7 +148,7 @@ Homelab docker-compose environment defined in code. Using Forgejo Actions and Re
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/n8n.svg"></td>
         <td><a href="https://n8n.io">n8n</a></td>
-        <td>Switching from ActivePieces to n8n, more robust</td>
+        <td>Self hosted automation platform, Zapier alternative, switched from ActivePieces</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://ollama.com/public/ollama.png"></td>
@@ -231,7 +231,7 @@ Homelab docker-compose environment defined in code. Using Forgejo Actions and Re
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/ansible-black.svg"></td>
         <td><a href="https://github.com/ansible/awx">AWX (Ansible Tower)</a></td>
-        <td>Used to easily run Ansible playbooks on all my VM's, installed on Minikube</td>
+        <td>Used to easily run Ansible playbooks on all my VM's, and now CD for this repo, installed on K3s</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/grafana.svg"></td>
