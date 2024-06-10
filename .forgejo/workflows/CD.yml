@@ -42,6 +42,9 @@ jobs:
             downloaders)
               target_host=${{ secrets.DOWNLOADERS_IP }}
               ;;
+            AI)
+              target_host="ai.lan"
+              ;;
             # Add cases for other folders/hosts
             *)
               echo "Unknown folder: $folder"
@@ -67,7 +70,10 @@ jobs:
       - name: Fetch AWX Job Logs
         run: |
           # Fetch the most recent job from AWX
-          job_id=$(curl -s -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" https://awx.mafyuh.xyz/api/v2/job_templates/13/jobs?order_by=-id | jq -r '.results[0].id')
+          job_id=$(curl -s -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" https://awx.mafyuh.xyz/api/v2/job_templates/13/jobs/?order_by=-id | jq -r '.results[0].id')
 
           # Fetch the logs for the job
-          curl -s -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" https://awx.mafyuh.xyz/api/v2/jobs/$job_id/stdout/
+          logs=$(curl -s -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" https://awx.mafyuh.xyz/api/v2/jobs/$job_id/stdout/?format=json)
+
+          # Display the logs
+          echo "$logs"
