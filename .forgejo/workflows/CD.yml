@@ -24,91 +24,74 @@ jobs:
           echo "Modified folders: $folders"
           echo "::set-output name=folders::$folders"
 
-      - name: Determine target host
-        id: determine-host
+      - name: Deploy to hosts
         run: |
-          folder=$(echo "${{ steps.detect-changes.outputs.folders }}" | head -n 1)
-          if [ -z "$folder" ]; then
-            echo "No modified folders detected"
-            exit 1
-          fi
-          case $folder in
-            arrs)
-              target_host="arrs.lan"
-              ;;
-            arm)
-              target_host="arm.lan"
-              ;;
-            downloaders)
-              target_host="downloaders.lan"
-              ;;
-            AI)
-              target_host="ai.lan"
-              ;;
-            authentik)
-              target_host="auth.lan"
-              ;;
-            cf)
-              target_host="cf.lan"
-              ;;
-            jellyfin)
-              target_host="jf.lan"
-              ;;
-            kasm)
-              target_host="kasm.lan"
-              ;;
-            netboot)
-              target_host="netboot.lan"
-              ;;
-            nexus)
-              target_host="nexus.lan"
-              ;;
-            pages)
-              target_host="pages.lan"
-              ;;
-            portainer)
-              target_host="port.lan"
-              ;;
-            twingate)
-              target_host="twingate.lan"
-              ;;
-            whisper)
-              target_host="whisper.lan"
-              ;;
-            # Add cases for other folders/hosts
-            *)
-              echo "Unknown folder: $folder"
-              exit 1
-              ;;
-          esac
-          echo "::set-output name=target_host::$target_host"
-          echo "::set-output name=folder::$folder"
+          IFS=' ' read -r -a folder_array <<< "${{ steps.detect-changes.outputs.folders }}"
+          for folder in "${folder_array[@]}"; do
+            case $folder in
+              arrs)
+                target_host="arrs.lan"
+                ;;
+              arm)
+                target_host="arm.lan"
+                ;;
+              downloaders)
+                target_host="downloaders.lan"
+                ;;
+              AI)
+                target_host="ai.lan"
+                ;;
+              authentik)
+                target_host="auth.lan"
+                ;;
+              cf)
+                target_host="cf.lan"
+                ;;
+              jellyfin)
+                target_host="jf.lan"
+                ;;
+              kasm)
+                target_host="kasm.lan"
+                ;;
+              netboot)
+                target_host="netboot.lan"
+                ;;
+              nexus)
+                target_host="nexus.lan"
+                ;;
+              pages)
+                target_host="pages.lan"
+                ;;
+              portainer)
+                target_host="port.lan"
+                ;;
+              twingate)
+                target_host="twingate.lan"
+                ;;
+              whisper)
+                target_host="whisper.lan"
+                ;;
+              # Add cases for other folders/hosts
+              *)
+                echo "Unknown folder: $folder"
+                continue
+                ;;
+            esac
+            echo "Triggering AWX Job with target host: $target_host and folder: $folder"
+            curl -X POST -k -H "Content-Type: application/json" \
+              -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" \
+              -d "{\"extra_vars\": {\"target_host\": \"$target_host\", \"folder\": \"$folder\"}}" \
+              "https://awx.mafyuh.xyz/api/v2/job_templates/13/launch/"
 
-      - name: Trigger AWX Job
-        run: |
-          TARGET_HOST="${{ steps.determine-host.outputs.target_host }}"
-          FOLDER="${{ steps.determine-host.outputs.folder }}"
-          echo "Triggering AWX Job with target host: $TARGET_HOST and folder: $FOLDER"
-          curl -X POST -k -H "Content-Type: application/json" \
-            -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" \
-            -d "{\"extra_vars\": {\"target_host\": \"$TARGET_HOST\", \"folder\": \"$FOLDER\"}}" \
-            "https://awx.mafyuh.xyz/api/v2/job_templates/13/launch/"
+            sleep 45  # Delay for 45 seconds before fetching logs
 
-      - name: Delay for 45 seconds
-        run: sleep 45 
-
-      - name: Fetch AWX Job Logs
-        run: |
-          # Fetch the most recent job from AWX
-          job_id=$(curl -s -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" https://awx.mafyuh.xyz/api/v2/job_templates/13/jobs/?order_by=-id | jq -r '.results[0].id')
-
-          # Fetch the logs for the job
-          logs=$(curl -s -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" https://awx.mafyuh.xyz/api/v2/jobs/$job_id/stdout/?format=json)
-
-          # Display the logs
-          echo "Range:"
-          echo "Start: $(echo "$logs" | jq -r '.range.start')"
-          echo "End: $(echo "$logs" | jq -r '.range.end')"
-          echo "Absolute End: $(echo "$logs" | jq -r '.range.absolute_end')"
-          echo "Content:"
-          echo "$(echo "$logs" | jq -r '.content')"
+            job_id=$(curl -s -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" https://awx.mafyuh.xyz/api/v2/job_templates/13/jobs/?order_by=-id | jq -r '.results[0].id')
+            logs=$(curl -s -H "Authorization: Bearer ${{ secrets.AWX_API_TOKEN }}" https://awx.mafyuh.xyz/api/v2/jobs/$job_id/stdout/?format=json)
+            echo "AWX Job Logs for folder: $folder"
+            echo "Range:"
+            echo "Start: $(echo "$logs" | jq -r '.range.start')"
+            echo "End: $(echo "$logs" | jq -r '.range.end')"
+            echo "Absolute End: $(echo "$logs" | jq -r '.range.absolute_end')"
+            echo "Content:"
+            echo "$(echo "$logs" | jq -r '.content')"
+          done
