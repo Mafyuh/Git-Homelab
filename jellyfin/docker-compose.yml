@@ -34,7 +34,7 @@ services:
     privileged: true
 
   syncthing:
-    image: ghcr.io/linuxserver/syncthing@sha256:71db49de13f2d0a963fa43c10427972ace94135525d7072c94c63d846f57a7e6
+    image: ghcr.io/linuxserver/syncthing@sha256:6e70dd0cc0ddb038a8f58cf0945d6659b13c984f11d708407469bf16d520574c
     container_name: syncthing
     hostname: JF
     environment:
