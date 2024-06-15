@@ -1,6 +1,6 @@
 services:
   portainer:
-    image: docker.mafyuh.xyz/portainer/portainer-ce@sha256:3230606275b0a2a109afd59c881e5b187bed6162ea8f1783f77b077fe37f42d7
+    image: docker.mafyuh.xyz/portainer/portainer-ee@sha256:0aa305da72738d9f90a209bf74bdc74172004690fa298f52d5f92dd065f26aea
     container_name: portainer
     command: -H unix:///var/run/docker.sock
     ports:
