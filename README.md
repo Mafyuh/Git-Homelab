@@ -283,18 +283,12 @@ graph TD
   D -- No --> E(End)
   
   subgraph Handle Merged PR
-    D -- Yes --> F[Extract App Name]
+    D -- Yes --> F[Extract Host]
     F --> G[SSH to Host Machine]
     G --> H[Git Pull & Docker Compose Up]
-    H --> I{Error?}
-    I -- Yes --> J[Send Gotify Notification]
-    J --> K(End)
-    I -- No --> L[Extract PR Number]
-    L --> M[Add PR Number to Forgejo API URL]
-    M --> N[Send Review with Logs]
-    N --> O(End)
+    H --> I(End)
   end
-  
+
   subgraph Notification on PR Creation
     B --> P[Notify via Gotify]
   end
@@ -304,12 +298,12 @@ graph TD
     R -- No --> S(End)
     R -- Yes --> T[Hit GitHub API for Release Notes]
     T --> U[Extract PR Number from webhook]
-    U --> V[API Call to Foregjo]
-    V --> W[Leave Release Notes as Comment]
+    U --> W[API Call to Foregjo to leave Release Notes]
     W --> S
   end
   
   P --> Q
+
 
 ```
 
