@@ -1,7 +1,7 @@
 ---
 services:
   pages:
-    image: codeberg.org/codeberg/pages-server@sha256:8d050de79dcab1546d2f1098fa3363b73ac1b9ba3289ee0bfbbcb146991ae838
+    image: codeberg.org/codeberg/pages-server:v5.1
     container_name: codeberg-pages
     environment:
       - GITEA_ROOT=https://git.mafyuh.dev
