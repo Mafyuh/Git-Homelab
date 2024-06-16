@@ -163,7 +163,7 @@ Homelab docker-compose environment defined in code. Using Forgejo Actions and Re
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/portainer.svg"></td>
         <td><a href="https://github.com/portainer/portainer">Portainer</a></td>
-        <td>Web-based management for Docker containers</td>
+        <td>Web-based management for learning Kubernetes, I learned Docker this way and will Kub as well</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/prowlarr.svg"></td>
