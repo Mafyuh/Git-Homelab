@@ -7,7 +7,7 @@
 
 # Auto-Homelab
 
-Homelab docker-compose environment defined in code. Using Forgejo Actions and Renovate bot for CI, AWX Tower and Forgejo Actions for CD. This is how I keep my Homelab UTD
+Homelab docker-compose environment defined in code. Using Forgejo Actions and Renovate bot for CI, AWX Tower and Forgejo Actions for CD. This is how I keep my Homelab UTD.
 
 </div>
 <p align="center">
