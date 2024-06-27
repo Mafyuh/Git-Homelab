@@ -22,7 +22,7 @@ services:
       - 5443:5443/udp
 
   adguardhome-sync:
-    image: ghcr.io/linuxserver/adguardhome-sync@sha256:67962a0e15bf1a41e4bc0083d93d7e0268ad6431482c337ef49d5f2673c36c71
+    image: ghcr.io/linuxserver/adguardhome-sync@sha256:7bf31e7bb4e3ef8f0cb9f7b0aaf13973b3e12f443afd9f97e9f1dda31010db7a
     container_name: adguardhome-sync
     environment:
       - PUID=1000
