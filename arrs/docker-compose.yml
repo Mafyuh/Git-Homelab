@@ -157,6 +157,21 @@ services:
       - 21027:21027/udp
     restart: unless-stopped
 
+  code-server:
+    image: ghcr.io/linuxserver/code-server@sha256:086c9625a89bec4ea651cea26ee5ec7c242fe3d318fdc9142fd89b091bae04e6
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUDO_PASSWORD=$SUDO_PASSWORD
+      - PROXY_DOMAIN=$PROXY_DOMAIN
+    volumes:
+      - /docker/appdata/code-server/config:/config
+    ports:
+      - 8443:8443
+    restart: unless-stopped
+
 networks:
   default:
     name: arrs_default
