@@ -137,7 +137,7 @@ services:
         ipv4_address: 172.25.0.25
 
   syncthing:
-    image: ghcr.io/linuxserver/syncthing@sha256:6e70dd0cc0ddb038a8f58cf0945d6659b13c984f11d708407469bf16d520574c
+    image: ghcr.io/linuxserver/syncthing@sha256:77e01f31c68b6a0877222b538c976e0df1e2ba1137bbf7a496f6a70148239929
     container_name: syncthing
     hostname: ARM #optional
     environment:
