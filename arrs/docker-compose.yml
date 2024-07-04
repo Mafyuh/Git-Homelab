@@ -91,7 +91,7 @@ services:
       - AUTH_OIDC_ADMIN_GROUP=${AUTH_OIDC_ADMIN_GROUP}
 
   doplarr:
-    image: ghcr.io/linuxserver/doplarr@sha256:e6926da5c9c7236d8acc6b591e27e935dab04b7959343de4113a83ce99e5afce
+    image: ghcr.io/linuxserver/doplarr@sha256:b71ea85a718b4ed924f132c6a5e62ddef68a7f43ba137f4f30900067532a5d9a
     container_name: doplarr
     environment:
       - PUID=1000
