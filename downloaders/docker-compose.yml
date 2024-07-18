@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   sabnzbd:
-    image: ghcr.io/linuxserver/sabnzbd@sha256:db76abdcd65ba2c06a630d17d7e71e75245f8c7ace734d4cadd6402e2776ad5c
+    image: ghcr.io/linuxserver/sabnzbd@sha256:31ea64a7ce1e9a5ff8187f9b7c905eaa1d0a79d49b04724e47059c67407157eb
     container_name: sabnzbd
     environment:
       - PUID=1000
@@ -72,7 +72,7 @@ services:
     image: gcr.io/cadvisor/cadvisor:v0.49.1
 
   node-exporter:
-    image: docker.mafyuh.xyz/prom/node-exporter:v1.8.1
+    image: docker.mafyuh.xyz/prom/node-exporter:v1.8.2
     container_name: monitoring_node_exporter
     restart: unless-stopped
     ports:
