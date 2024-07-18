@@ -72,7 +72,7 @@ services:
     image: gcr.io/cadvisor/cadvisor:v0.49.1
 
   node-exporter:
-    image: docker.mafyuh.xyz/prom/node-exporter:v1.8.1
+    image: docker.mafyuh.xyz/prom/node-exporter:v1.8.2
     container_name: monitoring_node_exporter
     restart: unless-stopped
     ports:
