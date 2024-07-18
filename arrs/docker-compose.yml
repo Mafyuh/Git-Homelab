@@ -15,7 +15,7 @@ services:
       - PGID=1000
 
   lidarr:
-    image: ghcr.io/linuxserver/lidarr@sha256:1c051955d5a564e67dab3711be1b9407acd988fd72e2a7d271255d41f6b818ea
+    image: ghcr.io/linuxserver/lidarr@sha256:3c093803236a9f694f805392a5d6461b550f70b3f9cf4be0bc73b3428e3dbe90
     container_name: lidarr
     ports:
       - "8686:8686"
@@ -31,7 +31,7 @@ services:
       - PGID=1000
 
   prowlarr:
-    image: ghcr.io/linuxserver/prowlarr@sha256:211cfc5b99e14dee7d49190b6ac8cceee3183a58240d522fb1937847ee4518e4
+    image: ghcr.io/linuxserver/prowlarr@sha256:7c3e7840c726828643131583514b66f38e7af29021d5a7b05ed8ed5c8ec0b596
     container_name: prowlarr
     ports:
       - "9696:9696"
@@ -43,7 +43,7 @@ services:
       - PGID=1000
 
   radarr:
-    image: ghcr.io/linuxserver/radarr@sha256:c5b78b1f1e8556d781788194c4ee2b87ca7e3620b701bfce31499e60ee50eca3
+    image: ghcr.io/linuxserver/radarr@sha256:1eaf9e83fca2b9170d4f49f6c0e55ba38693718e7815743a9ec297d199ab1e73
     container_name: radarr
     ports:
       - "7878:7878"
@@ -158,7 +158,7 @@ services:
     restart: unless-stopped
 
   code-server:
-    image: ghcr.io/linuxserver/code-server@sha256:086c9625a89bec4ea651cea26ee5ec7c242fe3d318fdc9142fd89b091bae04e6
+    image: ghcr.io/linuxserver/code-server@sha256:1eb6671a1bc500028e1d7a44eccbfdffbb2d802840c6d7f9e83cc87e1003da94
     container_name: code-server
     environment:
       - PUID=1000
