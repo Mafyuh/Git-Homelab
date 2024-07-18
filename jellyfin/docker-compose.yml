@@ -13,6 +13,7 @@ services:
     volumes:
       - /home/mafyuh/jellyfin/config:/config
       - /mnt/thePoolShare/Media:/Media
+      - /mnt/thePoolShare/Media/Youtube:/Media/Youtube:ro
       - /home/mafyuh/jellyfin/transcodes:/transcodes
       - /home/mafyuh/jellyfin/cache:/nvmecache
       - /home/mafyuh/jellyfin/metadata:/nvmemetadata
