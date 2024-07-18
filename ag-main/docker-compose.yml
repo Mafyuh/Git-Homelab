@@ -1,7 +1,7 @@
 ---
 services:
   adguardhome:
-    image: docker.mafyuh.xyz/adguard/adguardhome:v0.107.51
+    image: docker.mafyuh.xyz/adguard/adguardhome:v0.107.52
     container_name: adguardhome
     restart: unless-stopped
     volumes:
@@ -22,7 +22,7 @@ services:
       - 5443:5443/udp
 
   adguardhome-sync:
-    image: ghcr.io/linuxserver/adguardhome-sync@sha256:eb34df4da9480993a7e63f600541c5c6f3462dbabe8a67780cf58740957526fe
+    image: ghcr.io/linuxserver/adguardhome-sync@sha256:ee2ddd62c61d13e01da7f96135d1438376a22992c7d9951b2429bb2cfd64a05a
     container_name: adguardhome-sync
     environment:
       - PUID=1000
