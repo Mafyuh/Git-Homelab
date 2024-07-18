@@ -107,7 +107,7 @@ services:
     networks:
       - gitea_main
   n8n:
-    image: ghcr.io/n8n-io/n8n:1.48.2
+    image: ghcr.io/n8n-io/n8n:1.51.0
     container_name: n8n
     ports:
       - 5678:5678
@@ -122,7 +122,7 @@ services:
       - gitea_main
 
   vaultwarden:
-    image: docker.mafyuh.xyz/vaultwarden/server:1.30.5
+    image: docker.mafyuh.xyz/vaultwarden/server:1.31.0
     container_name: vaultwarden
     ports:
       - 8989:80
@@ -137,7 +137,7 @@ services:
         ipv4_address: 172.25.0.25
 
   syncthing:
-    image: ghcr.io/linuxserver/syncthing@sha256:bc97605a1d7d07ca221a05949ea0f56a0585feb5db375b756b1f2bca0354600f
+    image: ghcr.io/linuxserver/syncthing@sha256:6fb87abe19730aad01b6511d660a0664be424986ae662b85eb76f0ce585c4890
     container_name: syncthing
     hostname: ARM #optional
     environment:
