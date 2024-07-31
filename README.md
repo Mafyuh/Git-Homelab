@@ -5,6 +5,8 @@
 ![Header Image](https://raw.githubusercontent.com/Mafyuh/homelab-svg-assets/main/assets/header_.png)
 <div align="center">
 
+# This Repo has been migrated to [iac](https://git.mafyuh.dev/mafyuh/iac) and has now been archived.
+
 # Auto-Homelab
 
 Homelab docker-compose environment defined in code. Using Forgejo Actions and Renovate bot for CI, AWX Tower and Forgejo Actions for CD. This is how I keep my Homelab UTD.
